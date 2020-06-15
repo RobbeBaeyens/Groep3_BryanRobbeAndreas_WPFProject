@@ -215,17 +215,17 @@
           <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Eventnaam" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EventtypeID" Type="Int32" Nullable="false" />
-          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" />
           <Property Name="Startuur" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Einduur" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LocatieID" Type="Int32" />
           <Property Name="KlantID" Type="Int32" />
-          <NavigationProperty Name="Artiest" Relationship="Self.FK_Artiest_Event" FromRole="Event" ToRole="Artiest" />
+          <NavigationProperty Name="Artiesten" Relationship="Self.FK_Artiest_Event" FromRole="Event" ToRole="Artiest" />
           <NavigationProperty Name="Klant" Relationship="Self.FK_Event_Klant" FromRole="Event" ToRole="Klant" />
           <NavigationProperty Name="Locatie" Relationship="Self.FK_Event_Locatie" FromRole="Event" ToRole="Locatie" />
           <NavigationProperty Name="Eventtype" Relationship="Self.FK_EventType_Event" FromRole="Event" ToRole="Eventtype" />
-          <NavigationProperty Name="Notitie" Relationship="Self.FK_Notitie_Event" FromRole="Event" ToRole="Notitie" />
-          <NavigationProperty Name="ToDo" Relationship="Self.FK_ToDo_Event" FromRole="Event" ToRole="ToDo" />
+          <NavigationProperty Name="Notities" Relationship="Self.FK_Notitie_Event" FromRole="Event" ToRole="Notitie" />
+          <NavigationProperty Name="ToDos" Relationship="Self.FK_ToDo_Event" FromRole="Event" ToRole="ToDo" />
         </EntityType>
         <EntityType Name="Eventtype">
           <Key>
@@ -234,7 +234,7 @@
           <Property Name="EventtypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Naam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <NavigationProperty Name="Event" Relationship="Self.FK_EventType_Event" FromRole="Eventtype" ToRole="Event" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_EventType_Event" FromRole="Eventtype" ToRole="Event" />
         </EntityType>
         <EntityType Name="Klant">
           <Key>
@@ -250,7 +250,7 @@
           <Property Name="Contactnaam" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Telefoon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Event" Relationship="Self.FK_Event_Klant" FromRole="Klant" ToRole="Event" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Event_Klant" FromRole="Klant" ToRole="Event" />
         </EntityType>
         <EntityType Name="Locatie">
           <Key>
@@ -265,7 +265,7 @@
           <Property Name="Manager" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Telefoon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Event" Relationship="Self.FK_Event_Locatie" FromRole="Locatie" ToRole="Event" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Event_Locatie" FromRole="Locatie" ToRole="Event" />
         </EntityType>
         <EntityType Name="Notitie">
           <Key>
