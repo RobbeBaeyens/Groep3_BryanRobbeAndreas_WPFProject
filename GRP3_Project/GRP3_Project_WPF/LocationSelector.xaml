@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRP3_Project_WPF"
         mc:Ignorable="d"
-        Title="LocationSelector" Height="731" Width="411">
+        Title="LocationSelector" Height="731" Width="411" 
+                                 MinHeight="731" MinWidth="411">
+    <!--BRYAN ANTONIS-->
     <StackPanel>
         <Grid Style="{StaticResource Header}">
 
@@ -18,21 +20,75 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddLocation" Style="{StaticResource AddButtonHeader}">
+            <Button x:Name="btnAddLocation"
+                    Grid.Column="0" 
+                    Grid.Row="0"  
+                    Style="{StaticResource AddButtonHeader}">
                 <Button.Content>+</Button.Content>
             </Button>
-            <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="MS Mincho" Style="{StaticResource HeaderText}">
-                <TextBlock.Text>LOCATION</TextBlock.Text>
-            </TextBlock>
+
+            <StackPanel Grid.Column="1"  Grid.Row="0">
+                <TextBlock
+                       FontFamily="MS Mincho" 
+                       Style="{StaticResource HeaderText}">
+                    <TextBlock.Text>LOCATION</TextBlock.Text>
+                </TextBlock>
+
+                <Separator Background="CornflowerBlue" Margin="12, -5, 12, 0" Grid.Column="1"  Style="{StaticResource HeaderSeperator}"/>
+            </StackPanel>
         </Grid>
 
         <StackPanel Margin="20">
             <Label Content="Select Location"/>
-            <ComboBox>
+            <ComboBox Style="{StaticResource RoundComboBox}">
                 <ComboBoxItem Content="voorbeeld"/>
             </ComboBox>
 
-            <Separator Background="Black" Margin="0, 10, 0, 0"/>
+            <Separator Margin="0, 15, 0, 10" Background="Black"/>
+
+            <Label Content="Name"/>
+            <ComboBox Style="{StaticResource RoundComboBox}">
+                <ComboBoxItem Content="voorbeeld"/>
+            </ComboBox>
+
+            <Label Content="Street &amp; Number"/>
+            <ComboBox Style="{StaticResource RoundComboBox}">
+                <ComboBoxItem Content="voorbeeld"/>
+            </ComboBox>
+
+            <Label Content="Postal Code &amp; City"/>
+            <ComboBox Style="{StaticResource RoundComboBox}">
+                <ComboBoxItem Content="voorbeeld"/>
+            </ComboBox>
+            
+            <Label Content="Manager"/>
+            <ComboBox Style="{StaticResource RoundComboBox}">
+                <ComboBoxItem Content="voorbeeld"/>
+            </ComboBox>
+            
+            <Label Content="E-mail"/>
+            <ComboBox Style="{StaticResource RoundComboBox}">
+                <ComboBoxItem Content="voorbeeld"/>
+            </ComboBox>
+            
+            <Label Content="Phone"/>
+            <ComboBox Style="{StaticResource RoundComboBox}">
+                <ComboBoxItem Content="voorbeeld"/>
+            </ComboBox>
         </StackPanel>
+        
+        <DockPanel HorizontalAlignment="Center" Margin="0, 15, 0, 0">
+            <Button x:Name="btnDeleteLocation" 
+                    Content="DELETE" 
+                    Margin="0, 0, 20, 0" 
+                    Width="100" 
+                    Style="{StaticResource DeleteButton}"
+            />
+            <Button x:Name="btnSaveLocation" 
+                    Content="SAVE" 
+                    Width="100" 
+                    Style="{StaticResource SaveButton}"
+            />
+        </DockPanel>
     </StackPanel>
 </Window>
