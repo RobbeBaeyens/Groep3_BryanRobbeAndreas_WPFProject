@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3735c7ec6618409bb8b0ed44f5fa94ca" Name="Diagram1">
+        <EntityTypeShape EntityType="EventbeheerModel.Artiest" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventbeheerModel.Event" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventbeheerModel.Eventtype" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventbeheerModel.Klant" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventbeheerModel.Locatie" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventbeheerModel.Notitie" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EventbeheerModel.ToDo" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="EventbeheerModel.FK_Artiest_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="EventbeheerModel.FK_Event_Klant" ManuallyRouted="false" />
+        <AssociationConnector Association="EventbeheerModel.FK_Event_Locatie" ManuallyRouted="false" />
+        <AssociationConnector Association="EventbeheerModel.FK_EventType_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="EventbeheerModel.FK_Notitie_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="EventbeheerModel.FK_ToDo_Event" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
