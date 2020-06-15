@@ -1,0 +1,38 @@
+﻿<Window x:Class="GRP3_Project_WPF.LocationSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GRP3_Project_WPF"
+        mc:Ignorable="d"
+        Title="LocationSelector" Height="731" Width="411">
+    <StackPanel>
+        <Grid Style="{StaticResource Header}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddLocation" Style="{StaticResource AddButtonHeader}">
+                <Button.Content>+</Button.Content>
+            </Button>
+            <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="MS Mincho" Style="{StaticResource HeaderText}">
+                <TextBlock.Text>LOCATION</TextBlock.Text>
+            </TextBlock>
+        </Grid>
+
+        <StackPanel Margin="20">
+            <Label Content="Select Location"/>
+            <ComboBox>
+                <ComboBoxItem Content="voorbeeld"/>
+            </ComboBox>
+
+            <Separator Background="Black" Margin="0, 10, 0, 0"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
