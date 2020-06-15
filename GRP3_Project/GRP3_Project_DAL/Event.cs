@@ -17,9 +17,9 @@ namespace GRP3_Project_DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Event()
         {
-            this.Artiesten = new HashSet<Artiest>();
-            this.Notities = new HashSet<Notitie>();
-            this.ToDos = new HashSet<ToDo>();
+            this.Artiest = new HashSet<Artiest>();
+            this.Notitie = new HashSet<Notitie>();
+            this.ToDo = new HashSet<ToDo>();
         }
     
         public int EventID { get; set; }
@@ -32,13 +32,13 @@ namespace GRP3_Project_DAL
         public Nullable<int> KlantID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Artiest> Artiesten { get; set; }
+        public virtual ICollection<Artiest> Artiest { get; set; }
         public virtual Klant Klant { get; set; }
         public virtual Locatie Locatie { get; set; }
         public virtual Eventtype Eventtype { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Notitie> Notities { get; set; }
+        public virtual ICollection<Notitie> Notitie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ToDo> ToDos { get; set; }
+        public virtual ICollection<ToDo> ToDo { get; set; }
     }
 }
