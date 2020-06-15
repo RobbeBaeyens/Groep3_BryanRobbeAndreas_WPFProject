@@ -4,25 +4,35 @@
 
     <Style x:Key="Header" TargetType="Grid">
         <Setter Property="Background" Value="Black"/>
-        <Setter Property="Height" Value="60"/>
+    </Style>
+
+    <Style x:Key="HeaderBack" TargetType="DockPanel">
+        <Setter Property="Background" Value="LightGray"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="0 10 0 2"/>
     </Style>
 
     <Style x:Key="HeaderText" TargetType="TextBlock">
-        <Setter Property="Padding" Value="0 15"/>
+        <Setter Property="Padding" Value="0 15 0 0"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="24"/>
-        <Setter Property="TextDecorations">
+    </Style>
+
+    <Style x:Key="HeaderSubText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style x:Key="HeaderSeperator" TargetType="Separator">
+        <Setter Property="RenderTransform">
             <Setter.Value>
-                <TextDecorationCollection>
-                    <TextDecoration Location="Underline">
-                        <TextDecoration.Pen>
-                            <Pen Brush="CornflowerBlue" Thickness="3" />
-                        </TextDecoration.Pen>
-                    </TextDecoration>
-                </TextDecorationCollection>
+                <ScaleTransform ScaleY="3" />
             </Setter.Value>
         </Setter>
+        <Setter Property="Height" Value="3"/>
+        <Setter Property="Margin" Value="0 -5 0 5"/>
     </Style>
 
     <!-- Hoverless Button -->
@@ -45,13 +55,19 @@
         <Setter Property="Foreground" Value="White" />
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="50" />
-        <Setter Property="Margin" Value="10 -10 0 0"/>
+        <Setter Property="Margin" Value="10 0 0 0"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Foreground" Value="CornflowerBlue"/>
             </Trigger>
         </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" x:Key="BackButton" BasedOn="{StaticResource Hoverless}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="24"/>
     </Style>
 
 </ResourceDictionary>

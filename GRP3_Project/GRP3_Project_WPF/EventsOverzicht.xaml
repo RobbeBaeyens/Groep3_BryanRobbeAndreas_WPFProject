@@ -5,18 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRP3_Project_WPF"
         mc:Ignorable="d"
-        Title="EventsOverzicht" Height="731" Width="411" Loaded="Window_Loaded">
+        Title="EventsOverzicht" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411" Loaded="Window_Loaded">
+
+    <!--
+        ===================
+           Robbe Baeyens
+        ===================
+    -->
     <StackPanel>
         <Grid Style="{StaticResource Header}">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" x:Name="btnAddEvent"  Style="{StaticResource AddButtonHeader}">+</Button>
-            <TextBlock Grid.Column="1" FontFamily="MS Mincho" Style="{StaticResource HeaderText}">EVENTS</TextBlock>
+            <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddEvent"  Style="{StaticResource AddButtonHeader}" Click="btnAddEvent_Click">+</Button>
+            <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+                <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">EVENTS</TextBlock>
+                <Separator Background="CornflowerBlue" Style="{StaticResource HeaderSeperator}"/>
+                <!--<TextBlock FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}">FUIF</TextBlock>-->
+            </StackPanel>
+            <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
+                <Button Style="{StaticResource BackButton}">
+                    <Button.Content>
+                        <TextBlock Width="411">
+                            <Image Source="./pictogrammen/leftarrow.png"/>
+                            <TextBlock Margin="-10 -6 0 0"></TextBlock>
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
+            </DockPanel>
         </Grid>
     </StackPanel>
 </Window>
