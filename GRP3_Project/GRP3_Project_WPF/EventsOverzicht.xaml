@@ -5,11 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRP3_Project_WPF"
         mc:Ignorable="d"
-        Title="EventsOverzicht" Height="731" Width="411" Loaded="">
+        Title="EventsOverzicht" Height="731" Width="411" Loaded="Window_Loaded">
     <StackPanel>
-        <DockPanel Style="{StaticResource Header}">
-            <Button Style="{StaticResource AddButtonHeader}">+</Button>
-            <TextBlock FontFamily="MS Mincho" Style="{StaticResource HeaderText}">EVENTS</TextBlock>
-        </DockPanel>
+        <Grid Style="{StaticResource Header}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" x:Name="btnAddEvent"  Style="{StaticResource AddButtonHeader}">+</Button>
+            <TextBlock Grid.Column="1" FontFamily="MS Mincho" Style="{StaticResource HeaderText}">EVENTS</TextBlock>
+        </Grid>
     </StackPanel>
 </Window>

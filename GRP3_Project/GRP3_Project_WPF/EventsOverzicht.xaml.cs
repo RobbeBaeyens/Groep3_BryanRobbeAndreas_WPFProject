@@ -23,5 +23,15 @@ namespace GRP3_Project_WPF
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAddEvent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
