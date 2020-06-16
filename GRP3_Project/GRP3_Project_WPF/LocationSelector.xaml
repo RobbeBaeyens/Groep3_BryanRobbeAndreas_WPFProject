@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRP3_Project_WPF"
         mc:Ignorable="d"
+<<<<<<< HEAD
         Title="LocationSelector" Height="731" Width="411" 
                                  MinHeight="731" MinWidth="411">
     <!--BRYAN ANTONIS-->
+=======
+        Title="LocationSelector" Height="731" Width="411">
+>>>>>>> c6b29cc38f3b4f083127962b8dbe9f8ba6e286a3
     <StackPanel>
         <Grid Style="{StaticResource Header}">
 
@@ -20,6 +24,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+<<<<<<< HEAD
             <Button x:Name="btnAddLocation"
                     Grid.Column="0" 
                     Grid.Row="0"  
@@ -36,10 +41,19 @@
 
                 <Separator Background="CornflowerBlue" Margin="12, -5, 12, 0" Grid.Column="1"  Style="{StaticResource HeaderSeperator}"/>
             </StackPanel>
+=======
+            <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddLocation" Style="{StaticResource AddButtonHeader}">
+                <Button.Content>+</Button.Content>
+            </Button>
+            <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="MS Mincho" Style="{StaticResource HeaderText}">
+                <TextBlock.Text>LOCATION</TextBlock.Text>
+            </TextBlock>
+>>>>>>> c6b29cc38f3b4f083127962b8dbe9f8ba6e286a3
         </Grid>
 
         <StackPanel Margin="20">
             <Label Content="Select Location"/>
+<<<<<<< HEAD
             <ComboBox Style="{StaticResource RoundComboBox}">
                 <ComboBoxItem Content="voorbeeld"/>
             </ComboBox>
@@ -90,5 +104,13 @@
                     Style="{StaticResource SaveButton}"
             />
         </DockPanel>
+=======
+            <ComboBox>
+                <ComboBoxItem Content="voorbeeld"/>
+            </ComboBox>
+
+            <Separator Background="Black" Margin="0, 10, 0, 0"/>
+        </StackPanel>
+>>>>>>> c6b29cc38f3b4f083127962b8dbe9f8ba6e286a3
     </StackPanel>
 </Window>
