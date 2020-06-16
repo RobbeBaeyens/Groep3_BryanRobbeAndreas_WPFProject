@@ -48,34 +48,23 @@
             <Separator Margin="0, 15, 0, 10" Background="Black"/>
 
             <Label Content="Name" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}">
-                
-            </TextBox>
+            <TextBox Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Street &amp; Number" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}">
-                
-            </TextBox>
+            <TextBox Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Postal Code &amp; City" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}">
-
-            </TextBox>
+            <TextBox Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Manager" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}">
-                
-            </TextBox>
+            <TextBox Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="E-mail" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}">
-
-            </TextBox>
+            <TextBox Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Phone" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}">
-                
-            </TextBox>
+            <TextBox Style="{StaticResource RoundTextBox}"/>
+            
         </StackPanel>
 
         <DockPanel HorizontalAlignment="Center" Margin="0, 15, 0, 0">
