@@ -183,4 +183,27 @@
         <Setter Property="Opacity" Value="0.5"/>
         <Setter Property="Margin" Value="0,10,0,0"/>
     </Style>
+
+    <Style TargetType="{x:Type Label}" x:Key="Labelcheck">
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="Height" Value="47"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Margin" Value="0,0,10,5"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/pictogrammen/check.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Separator}" x:Key="ToDoSeparator">
+        <Setter Property="Background" Value="Black"/>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleY="3" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Height" Value="3"/>
+        <Setter Property="Margin" Value="0 -5 0 5"/>
+    </Style>
 </ResourceDictionary>

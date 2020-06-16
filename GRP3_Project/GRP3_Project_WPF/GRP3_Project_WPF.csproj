@@ -68,6 +68,9 @@
     <Compile Include="ToDoBewerken.xaml.cs">
       <DependentUpon>ToDoBewerken.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToDoOverzicht.xaml.cs">
+      <DependentUpon>ToDoOverzicht.xaml</DependentUpon>
+    </Compile>
     <Page Include="EventsOverzicht.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToDoBewerken.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToDoOverzicht.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
