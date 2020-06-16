@@ -23,5 +23,12 @@ namespace GRP3_Project_WPF
         {
             InitializeComponent();
         }
+
+        private void btnAddLocation_Click(object sender, RoutedEventArgs e)
+        {
+            Window locationAdd = new LocationAdd();
+            locationAdd.Show();
+            Close();
+        }
     }
 }

@@ -23,5 +23,12 @@ namespace GRP3_Project_WPF
         {
             InitializeComponent();
         }
+
+        private void btnBackToLocationSelector_Click(object sender, RoutedEventArgs e)
+        {
+            Window backToLocSel = new LocationSelector();
+            backToLocSel.Show();
+            Close();
+        }
     }
 }

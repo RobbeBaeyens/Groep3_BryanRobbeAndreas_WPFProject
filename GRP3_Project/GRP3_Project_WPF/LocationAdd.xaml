@@ -8,6 +8,7 @@
         Title="LocationAdd" Height="731" Width="411" 
                             MinHeight="731" MinWidth="411"
                             MaxHeight="731" MaxWidth="411">
+    <!--BRYAN ANTONIS-->
     <StackPanel>
         <Grid Style="{StaticResource Header}">
 
@@ -24,7 +25,6 @@
             <Button Grid.Column="0" 
                     Grid.Row="0" 
                     Style="{StaticResource AddButtonHeader}" Height="62">
-                
             </Button>
 
             <StackPanel Grid.Column="1"  Grid.Row="0">
@@ -38,7 +38,9 @@
             </StackPanel>
 
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
-                <Button Style="{StaticResource BackButton}">
+                <Button Style="{StaticResource BackButton}"
+                        x:Name="btnBackToLocationSelector"
+                        Click="btnBackToLocationSelector_Click">
                     <Button.Content>
                         <TextBlock Width="411">
                             <Image Source="./pictogrammen/leftarrow.png"/>
