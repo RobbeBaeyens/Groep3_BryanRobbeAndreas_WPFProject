@@ -1,14 +1,13 @@
-﻿<Window x:Class="GRP3_Project_WPF.LocationSelector"
+﻿<Window x:Class="GRP3_Project_WPF.LocationAdd"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRP3_Project_WPF"
         mc:Ignorable="d"
-        Title="LocationSelector" Height="731" Width="411" 
-                                 MinHeight="731" MinWidth="411"
-                                 MaxHeight="731" MaxWidth="411">
-    <!--BRYAN ANTONIS-->
+        Title="LocationAdd" Height="731" Width="411" 
+                            MinHeight="731" MinWidth="411"
+                            MaxHeight="731" MaxWidth="411">
     <StackPanel>
         <Grid Style="{StaticResource Header}">
 
@@ -22,11 +21,10 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="btnAddLocation"
-                    Grid.Column="0" 
-                    Grid.Row="0"  
-                    Style="{StaticResource AddButtonHeader}">
-                <Button.Content>+</Button.Content>
+            <Button Grid.Column="0" 
+                    Grid.Row="0" 
+                    Style="{StaticResource AddButtonHeader}" Height="62">
+                
             </Button>
 
             <StackPanel Grid.Column="1"  Grid.Row="0">
@@ -38,7 +36,7 @@
 
                 <Separator Background="CornflowerBlue" Margin="12, -5, 12, 0" Grid.Column="1"  Style="{StaticResource HeaderSeperator}"/>
             </StackPanel>
-            
+
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
                 <Button Style="{StaticResource BackButton}">
                     <Button.Content>
@@ -52,21 +50,20 @@
         </Grid>
 
         <StackPanel Margin="20">
-            
-            <Label Content="Select Location" Style="{StaticResource LabelStyle}"/>
-            <ComboBox Style="{StaticResource RoundComboBox}">
-                <ComboBoxItem Content="voorbeeld"/>
-            </ComboBox>
-
-            <Separator Margin="0, 15, 0, 10" Background="Black"/>
 
             <Label Content="Name" Style="{StaticResource LabelStyle}"/>
             <TextBox Style="{StaticResource RoundTextBox}"/>
 
-            <Label Content="Street &amp; Number" Style="{StaticResource LabelStyle}"/>
+            <Label Content="Street" Style="{StaticResource LabelStyle}"/>
             <TextBox Style="{StaticResource RoundTextBox}"/>
 
-            <Label Content="Postal Code &amp; City" Style="{StaticResource LabelStyle}"/>
+            <Label Content="Number" Style="{StaticResource LabelStyle}"/>
+            <TextBox Style="{StaticResource RoundTextBox}"/>
+
+            <Label Content="Postal Code" Style="{StaticResource LabelStyle}"/>
+            <TextBox Style="{StaticResource RoundTextBox}"/>
+
+            <Label Content="City" Style="{StaticResource LabelStyle}"/>
             <TextBox Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Manager" Style="{StaticResource LabelStyle}"/>
@@ -77,19 +74,13 @@
 
             <Label Content="Phone" Style="{StaticResource LabelStyle}"/>
             <TextBox Style="{StaticResource RoundTextBox}"/>
-            
-        </StackPanel>
 
-        <DockPanel HorizontalAlignment="Center" Margin="0, 15, 0, 0">
-            <Button x:Name="btnDeleteLocation" 
-                    Content="DELETE" 
-                    Margin="0, 0, 40, 0" 
-                    Style="{StaticResource DeleteButton}"
+        </StackPanel>
+        
+        <Button x:Name="btnSaveLocation" 
+                HorizontalAlignment="Center" 
+                Content="SAVE" 
+                Style="{StaticResource SaveButton}"
             />
-            <Button x:Name="btnSaveLocation" 
-                    Content="SAVE" 
-                    Style="{StaticResource SaveButton}"
-            />
-        </DockPanel>
     </StackPanel>
 </Window>

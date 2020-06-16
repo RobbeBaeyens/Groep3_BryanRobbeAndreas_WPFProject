@@ -69,7 +69,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="LocationAdd.xaml.cs">
+      <DependentUpon>LocationAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToDoBewerken.xaml.cs">
+      <DependentUpon>ToDoBewerken.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToDoOverzicht.xaml.cs">
+      <DependentUpon>ToDoOverzicht.xaml</DependentUpon>
+    </Compile>
     <Page Include="EventsOverzicht.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LocationAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,6 +112,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Styles\styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToDoBewerken.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToDoOverzicht.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
