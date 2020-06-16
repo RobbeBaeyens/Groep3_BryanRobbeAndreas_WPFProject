@@ -117,5 +117,44 @@
         </Style.Resources>
     </Style>
 
-    <!---->
+    <!--Stijl voor hoverless ToggleButton (Andreas Steenackers)-->
+    <Style TargetType="{x:Type ToggleButton}" x:Key="tbHoverless">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Padding ="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Stijl voor ToggleButton (Andreas Steenackers) --> 
+    <Style TargetType="{x:Type ToggleButton}" x:Key="ToDoButtonDone" BasedOn="{StaticResource tbHoverless}" >
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="Height" Value="47"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Margin" Value="0,10,10,0"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/pictogrammen/check.png"/>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/pictogrammen/nocheck.png"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Width" Value="60"/>
+                <Setter Property="Height" Value="47"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>
