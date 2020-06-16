@@ -69,5 +69,41 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="24"/>
     </Style>
+    
+    
+    
+    
+    <!--Delete Button rond (Bryan Antonis)-->
+    <Style TargetType="{x:Type Button}" x:Key="DeleteButton">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="OrangeRed"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="CornerRadius" Value="8"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <!--Save Button rond (Bryan Antonis)-->
+    <Style TargetType="{x:Type Button}" x:Key="SaveButton">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="DodgerBlue"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="CornerRadius" Value="8"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+    
+    <!--Ronde stijl voor Combobox (Bryan Antonis)-->
+    <Style TargetType="{x:Type ComboBox}" x:Key="RoundComboBox">
+        <Style.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Style.Resources>
+    </Style>
 
 </ResourceDictionary>
