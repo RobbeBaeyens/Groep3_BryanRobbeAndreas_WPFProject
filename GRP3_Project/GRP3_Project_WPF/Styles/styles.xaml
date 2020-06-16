@@ -78,6 +78,8 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="OrangeRed"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="30"/>
         <Style.Resources>
             <Style TargetType="{x:Type Border}">
                 <Setter Property="CornerRadius" Value="8"/>
@@ -90,6 +92,8 @@
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="DodgerBlue"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="30"/>
         <Style.Resources>
             <Style TargetType="{x:Type Border}">
                 <Setter Property="CornerRadius" Value="8"/>
@@ -106,4 +110,5 @@
         </Style.Resources>
     </Style>
 
+    <!---->
 </ResourceDictionary>

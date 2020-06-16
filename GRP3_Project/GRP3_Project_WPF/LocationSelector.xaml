@@ -48,46 +48,44 @@
             <Separator Margin="0, 15, 0, 10" Background="Black"/>
 
             <Label Content="Name"/>
-            <ComboBox Style="{StaticResource RoundComboBox}">
-                <ComboBoxItem Content="voorbeeld"/>
-            </ComboBox>
+            <TextBox>
+                
+            </TextBox>
 
             <Label Content="Street &amp; Number"/>
-            <ComboBox Style="{StaticResource RoundComboBox}">
-                <ComboBoxItem Content="voorbeeld"/>
-            </ComboBox>
+            <TextBox>
+                
+            </TextBox>
 
             <Label Content="Postal Code &amp; City"/>
-            <ComboBox Style="{StaticResource RoundComboBox}">
-                <ComboBoxItem Content="voorbeeld"/>
-            </ComboBox>
+            <TextBox>
+
+            </TextBox>
 
             <Label Content="Manager"/>
-            <ComboBox Style="{StaticResource RoundComboBox}">
-                <ComboBoxItem Content="voorbeeld"/>
-            </ComboBox>
+            <TextBox>
+                
+            </TextBox>
 
             <Label Content="E-mail"/>
-            <ComboBox Style="{StaticResource RoundComboBox}">
-                <ComboBoxItem Content="voorbeeld"/>
-            </ComboBox>
+            <TextBox>
+
+            </TextBox>
 
             <Label Content="Phone"/>
-            <ComboBox Style="{StaticResource RoundComboBox}">
-                <ComboBoxItem Content="voorbeeld"/>
-            </ComboBox>
+            <TextBox>
+                
+            </TextBox>
         </StackPanel>
 
         <DockPanel HorizontalAlignment="Center" Margin="0, 15, 0, 0">
             <Button x:Name="btnDeleteLocation" 
                     Content="DELETE" 
                     Margin="0, 0, 20, 0" 
-                    Width="100" 
                     Style="{StaticResource DeleteButton}"
             />
             <Button x:Name="btnSaveLocation" 
                     Content="SAVE" 
-                    Width="100" 
                     Style="{StaticResource SaveButton}"
             />
         </DockPanel>
