@@ -117,6 +117,24 @@
         </Style.Resources>
     </Style>
 
+    <!--Ronde stijl voor Textbox (Bryan Antonis)-->
+    <Style TargetType="{x:Type TextBox}" x:Key="RoundTextBox">
+        <Setter Property="Background" Value="LightGray"/>
+        <Setter Property="Margin" Value="0, 0, 0, 10"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+    
+    <!--Stijl voor Label's (Bryan Antonis)-->
+    <Style TargetType="{x:Type Label}" x:Key="LabelStyle">
+        <Setter Property="Margin" Value="0, 10, 0, 0"/>
+        <Setter Property="FontFamily" Value="MS Mincho"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+
     <!--Stijl voor hoverless ToggleButton (Andreas Steenackers)-->
     <Style TargetType="{x:Type ToggleButton}" x:Key="tbHoverless">
         <Setter Property="Background" Value="Transparent"/>

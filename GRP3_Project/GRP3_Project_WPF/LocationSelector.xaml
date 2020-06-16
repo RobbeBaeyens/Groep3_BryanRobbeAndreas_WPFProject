@@ -40,40 +40,40 @@
 
         <StackPanel Margin="20">
             
-            <Label Content="Select Location"/>
+            <Label Content="Select Location" Style="{StaticResource LabelStyle}"/>
             <ComboBox Style="{StaticResource RoundComboBox}">
                 <ComboBoxItem Content="voorbeeld"/>
             </ComboBox>
 
             <Separator Margin="0, 15, 0, 10" Background="Black"/>
 
-            <Label Content="Name"/>
-            <TextBox>
+            <Label Content="Name" Style="{StaticResource LabelStyle}"/>
+            <TextBox Style="{StaticResource RoundTextBox}">
                 
             </TextBox>
 
-            <Label Content="Street &amp; Number"/>
-            <TextBox>
+            <Label Content="Street &amp; Number" Style="{StaticResource LabelStyle}"/>
+            <TextBox Style="{StaticResource RoundTextBox}">
                 
             </TextBox>
 
-            <Label Content="Postal Code &amp; City"/>
-            <TextBox>
+            <Label Content="Postal Code &amp; City" Style="{StaticResource LabelStyle}"/>
+            <TextBox Style="{StaticResource RoundTextBox}">
 
             </TextBox>
 
-            <Label Content="Manager"/>
-            <TextBox>
+            <Label Content="Manager" Style="{StaticResource LabelStyle}"/>
+            <TextBox Style="{StaticResource RoundTextBox}">
                 
             </TextBox>
 
-            <Label Content="E-mail"/>
-            <TextBox>
+            <Label Content="E-mail" Style="{StaticResource LabelStyle}"/>
+            <TextBox Style="{StaticResource RoundTextBox}">
 
             </TextBox>
 
-            <Label Content="Phone"/>
-            <TextBox>
+            <Label Content="Phone" Style="{StaticResource LabelStyle}"/>
+            <TextBox Style="{StaticResource RoundTextBox}">
                 
             </TextBox>
         </StackPanel>
@@ -81,7 +81,7 @@
         <DockPanel HorizontalAlignment="Center" Margin="0, 15, 0, 0">
             <Button x:Name="btnDeleteLocation" 
                     Content="DELETE" 
-                    Margin="0, 0, 20, 0" 
+                    Margin="0, 0, 30, 0" 
                     Style="{StaticResource DeleteButton}"
             />
             <Button x:Name="btnSaveLocation" 
