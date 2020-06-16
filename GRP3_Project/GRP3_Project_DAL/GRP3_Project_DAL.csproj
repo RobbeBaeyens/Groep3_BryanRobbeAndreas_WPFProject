@@ -56,6 +56,7 @@
     <Compile Include="Artiest.cs">
       <DependentUpon>EventBeheerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseOperations.cs" />
     <Compile Include="Event.cs">
       <DependentUpon>EventBeheerModel.tt</DependentUpon>
     </Compile>

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRP3_Project_WPF"
         mc:Ignorable="d"
+        FontFamily="MS Mincho"
         Title="EventsOverzicht" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411" Loaded="Window_Loaded">
 
     <!--
@@ -42,5 +43,38 @@
                 </Button>-->
             </DockPanel>
         </Grid>
+
+        <ListBox x:Name="ListboxEvents" Background="Transparent" BorderBrush="Transparent" Margin="0" Padding="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="380">
+                        <DockPanel>
+                            <Canvas Width="20" Background="{Binding Color}"></Canvas>
+                            <StackPanel Margin="10 0 0 0" Width="260">
+                                <Label Padding="0" FontSize="20" Content="{Binding Eventnaam}"></Label>
+                                <Label Padding="0" FontSize="12" Content="{Binding EventtypeNaam}"></Label>
+                                <Separator/>
+                                <Label Padding="0" FontSize="8" Content="{Binding Dag}"></Label>
+                                <Label Padding="0" Content="{Binding DatumTijd}"></Label>
+                                <Button Margin="0 5" Width="120" Height="25" FontSize="16" Background="Orange" Content="SELECT" HorizontalAlignment="Left" Style="{StaticResource SelectButton}"/>
+                            </StackPanel>
+                            <StackPanel Width="80">
+                                <Image Width="70" Height="70" Source="{Binding Logo}"/>
+                                <DockPanel Width="70" Margin="0">
+                                    <Button x:Name="btnEventBewerken" Width="35" Margin="0" Padding="0" Style="{StaticResource Hoverless}" Click="btnEventBewerken_Click"
+                                            Tag="{Binding EventId}">
+                                        <Image Source="/pictogrammen/BlackSetup.png"/>
+                                    </Button>
+                                    <Button x:Name="btnEventVerwijderen" Width="35" Margin="0" Padding="0" Style="{StaticResource Hoverless}" Click="btnEventVerwijderen_Click">
+                                        <Image Source="/pictogrammen/trash.png"/>
+                                    </Button>
+                                </DockPanel>
+                            </StackPanel>
+                        </DockPanel>
+                        <Separator Margin="1" Background="Black" Style="{StaticResource HeaderSeperator}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </StackPanel>
 </Window>

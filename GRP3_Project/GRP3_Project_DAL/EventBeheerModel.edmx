@@ -79,7 +79,7 @@
           <Key>
             <PropertyRef Name="ToDoID" />
           </Key>
-          <Property Name="ToDoID" Type="int" Nullable="false" />
+          <Property Name="ToDoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Titel" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Omschrijving" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Afgewerkt" Type="bit" Nullable="false" />
@@ -281,7 +281,7 @@
           <Key>
             <PropertyRef Name="ToDoID" />
           </Key>
-          <Property Name="ToDoID" Type="Int32" Nullable="false" />
+          <Property Name="ToDoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Titel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Omschrijving" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Afgewerkt" Type="Boolean" Nullable="false" />
