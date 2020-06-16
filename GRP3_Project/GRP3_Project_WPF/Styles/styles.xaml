@@ -2,16 +2,19 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:GRP3_Project_WPF.Styles">
 
+    <!-- Header (Robbe Baeyens)-->
     <Style x:Key="Header" TargetType="Grid">
         <Setter Property="Background" Value="Black"/>
     </Style>
 
+    <!-- Headerback (Robbe Baeyens)-->
     <Style x:Key="HeaderBack" TargetType="DockPanel">
         <Setter Property="Background" Value="LightGray"/>
         <Setter Property="Height" Value="30"/>
         <Setter Property="Margin" Value="0 10 0 2"/>
     </Style>
 
+    <!-- Headertext (Robbe Baeyens)-->
     <Style x:Key="HeaderText" TargetType="TextBlock">
         <Setter Property="Padding" Value="0 15 0 0"/>
         <Setter Property="Foreground" Value="White"/>
@@ -19,12 +22,14 @@
         <Setter Property="FontSize" Value="24"/>
     </Style>
 
+    <!-- Headersubtext (Robbe Baeyens)-->
     <Style x:Key="HeaderSubText" TargetType="TextBlock">
         <Setter Property="Foreground" Value="Gray"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="12"/>
     </Style>
 
+    <!-- Header blue line (Robbe Baeyens)-->
     <Style x:Key="HeaderSeperator" TargetType="Separator">
         <Setter Property="RenderTransform">
             <Setter.Value>
@@ -35,7 +40,7 @@
         <Setter Property="Margin" Value="0 -5 0 5"/>
     </Style>
 
-    <!-- Hoverless Button -->
+    <!-- Hoverless Button (Robbe Baeyens)-->
     <Style TargetType="{x:Type Button}" x:Key="Hoverless">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -51,6 +56,7 @@
         </Setter>
     </Style>
 
+    <!-- Header plus button (Robbe Baeyens)-->
     <Style TargetType="{x:Type Button}" x:Key="AddButtonHeader" BasedOn="{StaticResource Hoverless}">
         <Setter Property="Foreground" Value="White" />
         <Setter Property="BorderThickness" Value="0"/>
@@ -64,6 +70,7 @@
         </Style.Triggers>
     </Style>
 
+    <!-- Header Back button (Robbe Baeyens)-->
     <Style TargetType="{x:Type Button}" x:Key="BackButton" BasedOn="{StaticResource Hoverless}">
         <Setter Property="Foreground" Value="White" />
         <Setter Property="BorderThickness" Value="0"/>
