@@ -43,23 +43,7 @@ namespace GRP3_Project_WPF
 
         private void btnSaveLocation_Click(object sender, RoutedEventArgs e)
         {
-            ArrayList errors = new ArrayList();
 
-            LocationFormProperties lfp = new LocationFormProperties();
-
-            string name = txtName.Text;
-            string street = txtStreet.Text;
-            int number = int.Parse(txtNumber.Text);
-            int postal = int.Parse(txtPostal.Text);
-            string city = txtCity.ToString();
-            string manager = txtManager.ToString();
-            string email = txtEmail.ToString();
-            string phone = txtPhone.ToString();
-
-            if (lfp.CheckString(name) == false) 
-            {
-                errors.Add()
-            }
         }
     }
 }
