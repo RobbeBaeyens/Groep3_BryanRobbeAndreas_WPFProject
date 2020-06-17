@@ -24,6 +24,7 @@ namespace GRP3_Project_WPF
     {
         int eventId;
         List<Locatie> locaties = new List<Locatie>();
+        Event eventItem = new Event();
 
 
         public LocationSelector(int eventId)
@@ -31,6 +32,7 @@ namespace GRP3_Project_WPF
             InitializeComponent();
             this.eventId = eventId;
 
+            eventItem = DatabaseOperations.OphalenEvent(eventId);
 
         }
 
@@ -38,6 +40,11 @@ namespace GRP3_Project_WPF
         {
             //cmbSelectLocatie.DisplayMemberPath = "Naam";
 
+            txtHeaderSubtekst.Text = eventItem.Eventnaam;
+            txtEventnaam.Text = eventItem.Eventnaam;
+
+            cmbSelectLocatie.DisplayMemberPath = "Naam";
+            cmbSelectLocatie.ItemsSource = DatabaseOperations.OphalenLocaties();
             
         }
 
@@ -46,6 +53,28 @@ namespace GRP3_Project_WPF
             Window locationAdd = new LocationAdd();
             locationAdd.Show();
             Close();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Window eventDetail = new EventDetail(eventId);
+
+            eventDetail.Show();
+
+            Close();
+
+        }
+
+        private void cmbSelectLocatie_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Locatie locatie = cmbSelectLocatie.SelectedItem as Locatie;
+
+            txtName.Text = locatie.Naam;
+            txtStreet.Text = locatie.Straat + " " + locatie.Huisnr.ToString();
+            txtPostCode.Text = locatie.Postcode.ToString() + ", " + locatie.Gemeente;
+            txtManager.Text = locatie.Manager;
+            txtEmail.Text = locatie.Email;
+            txtPhone.Text = locatie.Telefoon;
         }
     }
 }
