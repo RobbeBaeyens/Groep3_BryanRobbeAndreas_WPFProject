@@ -76,5 +76,53 @@ namespace GRP3_Project_DAL
                 return query.ToList();
             }
         }
+
+        /*=====================
+         * Location (Bryan Antonis)
+         =====================*/
+
+        //Ophalen
+        public static List<Locatie> OphalenLocaties(int locatieId)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                var query = entities.Locatie
+                    .Where(x => x.LocatieID == locatieId)
+                    .OrderBy(x => x.Naam);
+                return query.ToList();
+            }
+        }
+
+        //1x ophalen via ID
+        public static Locatie OphalenLocatie(int locatieId)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                var query = entities.Locatie
+                    .Where(x => x.LocatieID == locatieId)
+                    .OrderBy(x => x.Naam);
+                return query.SingleOrDefault();
+            }
+        }
+
+        //Toevoegen
+        public static int ToevoegenLocatie(Locatie locatieAdd)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                entities.Locatie.Add(locatieAdd);
+                return entities.SaveChanges();
+            }
+        }
+
+        //Updaten
+        public static int UpdatenLocatie(Locatie locatieUpd)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                entities.Entry(locatieUpd).State = EntityState.Modified;
+                return entities.SaveChanges();
+            }
+        }
     }
 }
