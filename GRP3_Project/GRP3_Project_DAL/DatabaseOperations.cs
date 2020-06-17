@@ -82,12 +82,11 @@ namespace GRP3_Project_DAL
          =====================*/
 
         //Ophalen
-        public static List<Locatie> OphalenLocaties(int locatieId)
+        public static List<Locatie> OphalenLocaties()
         {
             using (EventBeheerEntities entities = new EventBeheerEntities())
             {
                 var query = entities.Locatie
-                    .Where(x => x.LocatieID == locatieId)
                     .OrderBy(x => x.Naam);
                 return query.ToList();
             }

@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="LocationSelector" Height="731" Width="411" 
                                  MinHeight="731" MinWidth="411"
-                                 MaxHeight="731" MaxWidth="411">
+                                 MaxHeight="731" MaxWidth="411"
+                                 Loaded="Window_Loaded">
     <!--BRYAN ANTONIS-->
     <StackPanel>
         <Grid Style="{StaticResource Header}">
@@ -56,29 +57,29 @@
         <StackPanel Margin="20">
             
             <Label Content="Select Location" Style="{StaticResource LabelStyle}"/>
-            <ComboBox Style="{StaticResource RoundComboBox}">
+            <ComboBox x:Name="cmbSelectLocatie">
                 <ComboBoxItem Content="voorbeeld"/>
             </ComboBox>
 
             <Separator Margin="0, 15, 0, 10" Background="Black"/>
 
             <Label Content="Name" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtName" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Street &amp; Number" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtStreet" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Postal Code &amp; City" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtPostCode" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Manager" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtManager" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="E-mail" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtEmail" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Phone" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtPhone" Style="{StaticResource RoundTextBox}"/>
             
         </StackPanel>
 
