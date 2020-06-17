@@ -54,5 +54,19 @@ namespace GRP3_Project_WPF
             Close();
             eventsOverzicht.Show();
         }
+
+        private void btnToDO_Click(object sender, RoutedEventArgs e)
+        {
+            Window toDoOverzicht = new ToDoOverzicht(eventId);
+            Close();
+            toDoOverzicht.Show();
+        }
+
+        private void btnLocation_Click(object sender, RoutedEventArgs e)
+        {
+            Window locationSelector = new LocationSelector(eventId);
+            Close();
+            locationSelector.Show();
+        }
     }
 }

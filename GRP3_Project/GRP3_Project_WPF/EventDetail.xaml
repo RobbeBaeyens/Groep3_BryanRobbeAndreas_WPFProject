@@ -45,7 +45,7 @@
         </Grid>
 
         <StackPanel Margin="20">
-            <Button Style="{StaticResource EventDetailButton}" Margin="0">
+            <Button x:Name="btnToDO" Style="{StaticResource EventDetailButton}" Margin="0" Click="btnToDO_Click">
                 <DockPanel Margin="0" Width="360">
                     <Image Source="/pictogrammen/todo.png" Margin="-6 12 12 12" HorizontalAlignment="Left"/>
                     <StackPanel VerticalAlignment="Center" Margin="-16 0 0 0">
@@ -56,7 +56,7 @@
                 </DockPanel>
             </Button>
             <Separator/>
-            <Button Style="{StaticResource EventDetailButton}" Margin="0">
+            <Button x:Name="btnLocation" Style="{StaticResource EventDetailButton}" Margin="0" Click="btnLocation_Click">
                 <DockPanel Margin="0" Width="360">
                     <Image Source="/pictogrammen/location.png" Margin="-6 12 12 12" HorizontalAlignment="Left"/>
                     <StackPanel VerticalAlignment="Center" Margin="-16 0 0 0">
