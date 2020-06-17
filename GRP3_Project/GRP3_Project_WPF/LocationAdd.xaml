@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         Title="LocationAdd" Height="731" Width="411" 
                             MinHeight="731" MinWidth="411"
-                            MaxHeight="731" MaxWidth="411"
-                            Loaded="Window_Loaded">
+                            MaxHeight="731" MaxWidth="411">
     
     <!--BRYAN ANTONIS-->
     <StackPanel>

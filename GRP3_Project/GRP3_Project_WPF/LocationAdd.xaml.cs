@@ -30,16 +30,11 @@ namespace GRP3_Project_WPF
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnBackToLocationSelector_Click(object sender, RoutedEventArgs e)
         {
-            Window backToLocSel = new LocationSelector();
-            backToLocSel.Show();
-            Close();
+            //Window backToLocSel = new LocationSelector();
+            //backToLocSel.Show();
+            //Close();
         }
 
         private void btnSaveLocation_Click(object sender, RoutedEventArgs e)
