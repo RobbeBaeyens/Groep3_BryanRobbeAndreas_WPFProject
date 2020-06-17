@@ -73,7 +73,7 @@ namespace GRP3_Project_WPF
 
         private void btnGoBack_Click(object sender, RoutedEventArgs e)
         {
-            Window todoOverzicht = new ToDoOverzicht();
+            Window todoOverzicht = new ToDoOverzicht(eventID);
             Close();
             todoOverzicht.Show();
         }
