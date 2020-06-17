@@ -14,7 +14,7 @@ namespace GRP3_Project_DAL
         /*=====================
          * EVENT
          =====================*/
-        //ophalen
+        //ophalen lijst
         public static List<Event> OphalenEvents()
         {
             using (EventBeheerEntities entities = new EventBeheerEntities())
@@ -22,6 +22,49 @@ namespace GRP3_Project_DAL
                 var query = entities.Event
                     .Include(x => x.Eventtype)
                     .OrderBy(x => x.EventID);
+                return query.ToList();
+            }
+        }
+        //ophalen 1 via ID
+        public static Event OphalenEvent(int eventId)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                var query = entities.Event
+                    .Include(x => x.Eventtype)
+                    .Where(x => x.EventID == eventId);
+                return query.SingleOrDefault();
+            }
+        }
+        //toevoegen
+        public static int AddEvent(Event eventitem)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                entities.Event.Add(eventitem);
+                return entities.SaveChanges();
+            }
+        }
+        //updaten
+        public static int UpdateEvent(Event eventitem)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                entities.Entry(eventitem).State = EntityState.Modified;
+                return entities.SaveChanges();
+            }
+        }
+
+        /*=====================
+         * EventType
+         =====================*/
+        //ophalen
+        public static List<Eventtype> OphalenEventTypes()
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                var query = entities.Eventtype
+                    .OrderBy(x => x.EventtypeID);
                 return query.ToList();
             }
         }
