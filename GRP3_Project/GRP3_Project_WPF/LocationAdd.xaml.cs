@@ -88,7 +88,11 @@ namespace GRP3_Project_WPF
             }
             if (input == "Postcode" && (!int.TryParse(txtPostal.Text, out int postcode) || string.IsNullOrWhiteSpace(txtPostal.Text)))
             {
+
+                
+
                 return "Vul een correcte postcode in!" + Environment.NewLine;
+
             }
             return "";
         }

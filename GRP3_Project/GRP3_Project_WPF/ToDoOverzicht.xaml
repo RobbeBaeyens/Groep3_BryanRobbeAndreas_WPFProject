@@ -19,14 +19,14 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddToDo"  Style="{StaticResource AddButtonHeader}">+</Button>
+            <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddToDo"  Style="{StaticResource AddButtonHeader}" Click="btnAddToDo_Click" >+</Button>
             <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
                 <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">TODO</TextBlock>
                 <Separator Background="CornflowerBlue" Style="{StaticResource HeaderSeperator}"/>
                 <TextBlock FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
             </StackPanel>
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
-                <Button Style="{StaticResource BackButton}">
+                <Button x:Name="btnGoBack" Style="{StaticResource BackButton}" Click="btnGoBack_Click">
                     <Button.Content>
                         <TextBlock Width="411">
                             <Image Source="./pictogrammen/leftarrow.png"/>
@@ -36,21 +36,29 @@
                 </Button>
             </DockPanel>
         </Grid>
-        <StackPanel>
-            <DockPanel Background="LightGray">
-                <Label FontSize="25">#1</Label>
-                <Label FontSize="25">Titel</Label>
-                <Label Style="{StaticResource Labelcheck}"/>
-            </DockPanel>
-            
-            <Separator Style="{StaticResource ToDoSeparator}"/>
-            <TextBlock FontSize="16" Text="oke"/>
+        <ListBox x:Name="ListboxToDo" Background="Transparent" BorderBrush="Transparent" Margin="0" Padding="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="590">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <DockPanel Background="LightGray">
+                            <Label x:Name="lblVolgnr" FontSize="25" Content="{Binding Volgnr}"/>
+                            <Label FontSize="25" Content="{Binding Titel}"/>
+                            <Image Source="{Binding ImgChecked}" Style="{StaticResource Imgchecked}"/>
+                        </DockPanel>
 
-            <DockPanel>
-                <Button Content="DELETE" Margin="50,0,0,0" Style="{StaticResource DeleteButton}"/>
-                <Button Content="EDIT" Margin="50,0,0,0" Style="{StaticResource SaveButton}"/>
-            </DockPanel>
-            <Separator Style="{StaticResource ToDoSeparator}"/>
-        </StackPanel>
+                        <Separator Style="{StaticResource ToDoSeparator}"/>
+                        <TextBlock Padding="5" FontSize="16" Text="{Binding Omschrijving}"/>
+
+                        <DockPanel>
+                            <Button x:Name="btnDelete" Content="DELETE" Margin="50,0,0,10" Style="{StaticResource DeleteButton}" Click="btnDelete_Click"/>
+                            <Button x:Name="btnEdit" Content="EDIT" Margin="50,0,0,10" Style="{StaticResource SaveButton}" Click="btnEdit_Click"/>
+                        </DockPanel>
+                        <Separator Style="{StaticResource ToDoSeparator}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+      
     </StackPanel>
 </Window>
+

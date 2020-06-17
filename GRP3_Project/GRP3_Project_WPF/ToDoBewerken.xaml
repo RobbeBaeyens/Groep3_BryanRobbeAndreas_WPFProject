@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRP3_Project_WPF"
         mc:Ignorable="d"
-        Title="ToDoBewerken" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411">
+        Title="ToDoBewerken" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411" Loaded="Window_Loaded">
     <StackPanel >
-        
+
         <Grid Style="{StaticResource Header}">
 
             <Grid.ColumnDefinitions>
@@ -24,30 +24,30 @@
             <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
                 <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">TODO</TextBlock>
                 <Separator Background="CornflowerBlue" Style="{StaticResource HeaderSeperator}"/>
-                <TextBlock FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}">FUIF</TextBlock>
+                <TextBlock x:Name="txtHeaderSubText" FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
             </StackPanel>
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
-                <Button Style="{StaticResource BackButton}">
+                <Button x:Name="btnGoBack" Style="{StaticResource BackButton}" Click="btnGoBack_Click">
                     <Button.Content>
                         <TextBlock Width="411">
                             <Image Source="./pictogrammen/leftarrow.png"/>
-                            <TextBlock Margin="-10 -6 0 0"></TextBlock>
+                            <TextBlock x:Name="txtEventNaam" Margin="-10 -6 0 0"></TextBlock>
                         </TextBlock>
                     </Button.Content>
                 </Button>
             </DockPanel>
         </Grid>
-    
 
-    <DockPanel>
+
+        <DockPanel>
+            <Label x:Name="lblVolgnr" Content="#1" FontSize="25px" Margin="0,10,0,0"/>
             <Label Content="Titel:" FontSize="25px" Margin="0,10,0,0"/>
-            <TextBox Text="Enter Titel..." Style="{StaticResource ToDoTextBox}"/>
-            <ToggleButton Style="{StaticResource ToDoButtonDone}" />
+            <TextBox x:Name="txtToDoTitel" Style="{StaticResource ToDoTextBox}"/>
+            <ToggleButton x:Name="tgbCheck" Style="{StaticResource ToDoButtonDone}" />
         </DockPanel>
 
-        <TextBox Height="250" Margin="10,20,10,0"/>
+        <TextBox x:Name="txtbOmschrijving" Style="{StaticResource txtbToDoBewerk}"/>
 
-        <Button Content="Save" Style="{StaticResource SaveButton}"/>
+        <Button x:Name="btnSaveToDo" Content="Save" Margin="0,20,0,0" Style="{StaticResource SaveButton}" Click="btnSaveToDo_Click"/>
     </StackPanel>
 </Window>
-

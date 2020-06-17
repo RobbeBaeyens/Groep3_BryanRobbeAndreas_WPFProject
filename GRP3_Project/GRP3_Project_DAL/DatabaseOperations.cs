@@ -78,6 +78,51 @@ namespace GRP3_Project_DAL
         }
 
         /*=====================
+         * TODO Andreas Steenackers
+         =====================*/
+        //ophalen
+        public static ToDo OphalenTodo(int todoid)
+        {
+            using(EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                var query = entities.ToDo
+                    .Where(x => x.ToDoID == todoid);
+                return query.SingleOrDefault();
+            }
+        }
+
+        //toevoegen
+        public static int AddToDo(ToDo todo)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                entities.ToDo.Add(todo);
+                return entities.SaveChanges();
+            }
+        }
+        //updaten
+        public static int UpdateToDo(ToDo todo)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                entities.Entry(todo).State = EntityState.Modified;
+                return entities.SaveChanges();
+            }
+        }
+        
+        //ophalen lijst
+        public static List<ToDo> OphalenToDos()
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                var query = entities.ToDo
+                    .Include(x => x.Event)
+                    .OrderBy(x => x.ToDoID);
+                return query.ToList();
+            }
+        }
+              
+        /*=====================
          * Location (Bryan Antonis)
          =====================*/
 
