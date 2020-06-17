@@ -76,7 +76,42 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="24"/>
     </Style>
-    
+
+    <!-- Event Detail button (Robbe Baeyens)-->
+    <Style TargetType="{x:Type Button}" x:Key="EventDetailButton" BasedOn="{StaticResource Hoverless}">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Padding" Value="5"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="Orange"/>
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Todo complete Button rond (Robbe Baeyens)-->
+    <Style TargetType="{x:Type Button}" x:Key="TodoCompleteButton" BasedOn="{StaticResource Hoverless}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Orange"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Height" Value="30"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="CornerRadius" Value="8"/>
+            </Style>
+        </Style.Resources>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="Red"/>
+                <Setter Property="Background" Value="Blue"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <!--Select Button rond (Robbe Baeyens)-->
     <Style TargetType="{x:Type Button}" x:Key="SelectButton" BasedOn="{StaticResource Hoverless}">
         <Setter Property="Foreground" Value="White"/>

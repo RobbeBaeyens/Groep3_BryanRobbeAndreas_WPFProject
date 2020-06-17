@@ -78,6 +78,7 @@
     <Compile Include="Eventtype.cs">
       <DependentUpon>EventBeheerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FileOperations.cs" />
     <Compile Include="Klant.cs">
       <DependentUpon>EventBeheerModel.tt</DependentUpon>
     </Compile>
@@ -88,6 +89,7 @@
       <DependentUpon>EventBeheerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Partials\ToDo.cs" />
+    <Compile Include="Partials\Locatie.cs" />
     <Compile Include="Partials\Event.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToDo.cs">

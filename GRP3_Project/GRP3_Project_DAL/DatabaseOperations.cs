@@ -48,10 +48,18 @@ namespace GRP3_Project_DAL
         //updaten
         public static int UpdateEvent(Event eventitem)
         {
-            using (EventBeheerEntities entities = new EventBeheerEntities())
+            try
             {
-                entities.Entry(eventitem).State = EntityState.Modified;
-                return entities.SaveChanges();
+                using (EventBeheerEntities entities = new EventBeheerEntities())
+                {
+                    entities.Entry(eventitem).State = EntityState.Modified;
+                    return entities.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                //FileOperations.FoutLoggen(ex);
+                return 0;
             }
         }
 
@@ -68,6 +76,7 @@ namespace GRP3_Project_DAL
                 return query.ToList();
             }
         }
+
         /*=====================
          * TODO Andreas Steenackers
          =====================*/
@@ -100,7 +109,7 @@ namespace GRP3_Project_DAL
                 return entities.SaveChanges();
             }
         }
-
+        
         //ophalen lijst
         public static List<ToDo> OphalenToDos()
         {
@@ -110,6 +119,53 @@ namespace GRP3_Project_DAL
                     .Include(x => x.Event)
                     .OrderBy(x => x.ToDoID);
                 return query.ToList();
+            }
+        }
+              
+        /*=====================
+         * Location (Bryan Antonis)
+         =====================*/
+
+        //Ophalen
+        public static List<Locatie> OphalenLocaties()
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                var query = entities.Locatie
+                    .OrderBy(x => x.Naam);
+                return query.ToList();
+            }
+        }
+
+        //1x ophalen via ID
+        public static Locatie OphalenLocatie(int locatieId)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                var query = entities.Locatie
+                    .Where(x => x.LocatieID == locatieId)
+                    .OrderBy(x => x.Naam);
+                return query.SingleOrDefault();
+            }
+        }
+
+        //Toevoegen
+        public static int ToevoegenLocatie(Locatie locatieAdd)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                entities.Locatie.Add(locatieAdd);
+                return entities.SaveChanges();
+            }
+        }
+
+        //Updaten
+        public static int UpdatenLocatie(Locatie locatieUpd)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                entities.Entry(locatieUpd).State = EntityState.Modified;
+                return entities.SaveChanges();
             }
         }
     }
