@@ -25,7 +25,9 @@
             <Button x:Name="btnAddLocation"
                     Grid.Column="0" 
                     Grid.Row="0"  
-                    Style="{StaticResource AddButtonHeader}">
+                    Style="{StaticResource AddButtonHeader}"
+                    Click="btnAddLocation_Click"
+                    ToolTip="Click to add a new location">
                 <Button.Content>+</Button.Content>
             </Button>
 

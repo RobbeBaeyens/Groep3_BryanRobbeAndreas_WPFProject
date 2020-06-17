@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="LocationAdd" Height="731" Width="411" 
                             MinHeight="731" MinWidth="411"
-                            MaxHeight="731" MaxWidth="411">
+                            MaxHeight="731" MaxWidth="411"
+                            Loaded="Window_Loaded">
+    
+    <!--BRYAN ANTONIS-->
     <StackPanel>
         <Grid Style="{StaticResource Header}">
 
@@ -24,7 +27,6 @@
             <Button Grid.Column="0" 
                     Grid.Row="0" 
                     Style="{StaticResource AddButtonHeader}" Height="62">
-                
             </Button>
 
             <StackPanel Grid.Column="1"  Grid.Row="0">
@@ -38,7 +40,9 @@
             </StackPanel>
 
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
-                <Button Style="{StaticResource BackButton}">
+                <Button Style="{StaticResource BackButton}"
+                        x:Name="btnBackToLocationSelector"
+                        Click="btnBackToLocationSelector_Click">
                     <Button.Content>
                         <TextBlock Width="411">
                             <Image Source="./pictogrammen/leftarrow.png"/>
@@ -52,28 +56,28 @@
         <StackPanel Margin="20">
 
             <Label Content="Name" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtName" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Street" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtStreet" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Number" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtNumber" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Postal Code" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtPostal" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="City" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtCity" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Manager" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtManager" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="E-mail" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtEmail" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Phone" Style="{StaticResource LabelStyle}"/>
-            <TextBox Style="{StaticResource RoundTextBox}"/>
+            <TextBox x:Name="txtPhone" Style="{StaticResource RoundTextBox}"/>
 
         </StackPanel>
         
@@ -81,6 +85,7 @@
                 HorizontalAlignment="Center" 
                 Content="SAVE" 
                 Style="{StaticResource SaveButton}"
-            />
+                Click="btnSaveLocation_Click"
+        />
     </StackPanel>
 </Window>

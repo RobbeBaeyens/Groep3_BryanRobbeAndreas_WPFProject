@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+//Bryan Antonis
+
 namespace GRP3_Project_WPF
 {
     /// <summary>
@@ -22,6 +24,13 @@ namespace GRP3_Project_WPF
         public LocationSelector()
         {
             InitializeComponent();
+        }
+
+        private void btnAddLocation_Click(object sender, RoutedEventArgs e)
+        {
+            Window locationAdd = new LocationAdd();
+            locationAdd.Show();
+            Close();
         }
     }
 }
