@@ -44,13 +44,13 @@
             </DockPanel>
         </Grid>
 
-        <ListBox x:Name="ListboxEvents" Background="Transparent" BorderBrush="Transparent" Margin="0" Padding="0">
+        <ListBox x:Name="ListboxEvents" Background="Transparent" BorderBrush="Transparent" Margin="0" Padding="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="590">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Width="380">
                         <DockPanel>
                             <Canvas Width="20" Background="{Binding Color}"></Canvas>
-                            <StackPanel Margin="10 0 0 0" Width="260">
+                            <StackPanel Margin="10 0 0 0" HorizontalAlignment="Stretch">
                                 <Label Padding="0" FontSize="20" Content="{Binding Eventnaam}"></Label>
                                 <Label Padding="0" FontSize="12" Content="{Binding EventtypeNaam}"></Label>
                                 <Separator/>
@@ -58,7 +58,7 @@
                                 <Label Padding="0" Content="{Binding DatumTijd}"></Label>
                                 <Button Margin="0 5" Width="120" Height="25" FontSize="16" Background="Orange" Content="SELECT" HorizontalAlignment="Left" Style="{StaticResource SelectButton}"/>
                             </StackPanel>
-                            <StackPanel Width="80">
+                            <StackPanel Width="80" HorizontalAlignment="Right">
                                 <Image Width="70" Height="70" Source="{Binding Logo}"/>
                                 <DockPanel Width="70" Margin="0">
                                     <Button x:Name="btnEventBewerken" Width="35" Margin="0" Padding="0" Style="{StaticResource Hoverless}" Click="btnEventBewerken_Click"

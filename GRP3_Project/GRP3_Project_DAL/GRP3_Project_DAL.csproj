@@ -87,6 +87,7 @@
     <Compile Include="Notitie.cs">
       <DependentUpon>EventBeheerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partials\Event.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToDo.cs">
       <DependentUpon>EventBeheerModel.tt</DependentUpon>

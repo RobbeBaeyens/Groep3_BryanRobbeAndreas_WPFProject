@@ -1,4 +1,9 @@
-﻿using GRP3_Project_MODEL;
+﻿/*
+ * Robbe Baeyens
+ */
+
+
+using GRP3_Project_MODEL;
 using GRP3_Project_DAL;
 using System;
 using System.Collections.Generic;
@@ -52,7 +57,9 @@ namespace GRP3_Project_WPF
 
         private void btnAddEvent_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window eventBewerken = new EventBewerken();
+            eventBewerken.Show();
+            Close();
         }
 
         private void btnEventBewerken_Click(object sender, RoutedEventArgs e)
@@ -60,8 +67,8 @@ namespace GRP3_Project_WPF
             Button b = sender as Button;
 
             Window eventBewerken = new EventBewerken(int.Parse(b.Tag.ToString()));
-            eventBewerken.Show();
             Close();
+            eventBewerken.Show();
         }
 
         private void btnEventVerwijderen_Click(object sender, RoutedEventArgs e)

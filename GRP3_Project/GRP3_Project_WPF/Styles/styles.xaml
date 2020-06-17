@@ -78,7 +78,7 @@
     </Style>
     
     <!--Select Button rond (Robbe Baeyens)-->
-    <Style TargetType="{x:Type Button}" x:Key="SelectButton">
+    <Style TargetType="{x:Type Button}" x:Key="SelectButton" BasedOn="{StaticResource Hoverless}">
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="Orange"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
@@ -91,13 +91,36 @@
         </Style.Resources>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="LightCoral"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Background" Value="Blue"/>
+                <Setter Property="BorderThickness" Value="0"/>
             </Trigger>
         </Style.Triggers>
     </Style>
-    
-    
-    
+
+    <!--Ronde stijl voor DatePicker (Robbe Baeyens)-->
+    <Style TargetType="{x:Type DatePicker}" x:Key="RoundDatePicker">
+        <Setter Property="Background" Value="LightGray"/>
+        <Setter Property="Margin" Value="0, 0, 0, 15"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style TargetType="{x:Type DatePickerTextBox}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <TextBox x:Name="PART_TextBox" Background="LightGray" BorderThickness="0"
+                                    Text="{Binding Path=SelectedDate, StringFormat='d MMM yyyy', RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
     <!--Delete Button rond (Bryan Antonis)-->
     <Style TargetType="{x:Type Button}" x:Key="DeleteButton">
         <Setter Property="Foreground" Value="White"/>

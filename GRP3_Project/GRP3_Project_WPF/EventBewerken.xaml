@@ -28,7 +28,7 @@
 
             <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddEvent"  Style="{StaticResource AddButtonHeader}" Height="62"></Button>
             <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
-                <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">EVENTS</TextBlock>
+                <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">EVENT</TextBlock>
                 <Separator Background="CornflowerBlue" Style="{StaticResource HeaderSeperator}"/>
                 <!--<TextBlock FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}">FUIF</TextBlock>-->
             </StackPanel>
@@ -43,6 +43,36 @@
                 </Button>
             </DockPanel>
         </Grid>
-        
+
+        <StackPanel Margin="20">
+
+            <Label Content="Event Name:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+            <TextBox x:Name="txtEventName" Style="{StaticResource RoundTextBox}" Height="35" FontSize="20" Padding="2.5"/>
+
+            <Label Content="Type:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+            <ComboBox x:Name="cmbxTypes" Style="{StaticResource RoundComboBox}" Height="35" FontSize="20" Padding="2.5">
+            </ComboBox>
+
+            <Label Content="Date:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+
+            <DatePicker x:Name="dpDate" Style="{StaticResource RoundDatePicker}" Height="35" FontSize="20" Padding="2.5"
+                        SelectedDateFormat="Long"/>
+
+            <Label Content="Start time:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+            <TextBox x:Name="txtStartTime" Style="{StaticResource RoundTextBox}" Height="35" FontSize="20" Padding="2.5"/>
+
+            <Label Content="End time:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+            <TextBox x:Name="txtEndTime" Style="{StaticResource RoundTextBox}" Height="35" FontSize="20" Padding="2.5">
+            </TextBox>
+
+        </StackPanel>
+
+        <DockPanel HorizontalAlignment="Center" Margin="0, 15, 0, 0">
+            <Button x:Name="btnSaveEvent"  Width="365" Height="40" FontSize="25"
+                    Content="SAVE" 
+                    Style="{StaticResource SaveButton}" Click="btnSaveEvent_Click"
+            />
+        </DockPanel>
+
     </StackPanel>
 </Window>
