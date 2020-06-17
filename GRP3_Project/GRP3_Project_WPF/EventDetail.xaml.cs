@@ -38,14 +38,12 @@ namespace GRP3_Project_WPF
             InitializeComponent();
             this.eventId = eventId;
             eventitem = DatabaseOperations.OphalenEvent(eventId);
-
-            txtheadertext.Text = eventitem.Eventnaam;
-            txtheadersubtext.Text = eventitem.Eventtype.Naam;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            txtheadertext.Text = eventitem.Eventnaam;
+            txtheadersubtext.Text = eventitem.Eventtype.Naam;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
