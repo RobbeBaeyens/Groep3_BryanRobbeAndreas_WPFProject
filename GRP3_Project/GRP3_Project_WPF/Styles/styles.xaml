@@ -193,24 +193,22 @@
     
     <!--Stijl voor ToggleButton (Andreas Steenackers) --> 
     <Style TargetType="{x:Type ToggleButton}" x:Key="ToDoButtonDone" BasedOn="{StaticResource tbHoverless}" >
-        <Setter Property="Width" Value="60"/>
-        <Setter Property="Height" Value="47"/>
+        <Setter Property="Width" Value="50"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Margin" Value="0,10,10,0"/>
         <Setter Property="Background">
             <Setter.Value>
-                <ImageBrush ImageSource="/pictogrammen/check.png"/>
+                <ImageBrush ImageSource="/pictogrammen/nocheck.png"/>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background">
                     <Setter.Value>
-                        <ImageBrush ImageSource="/pictogrammen/nocheck.png"/>
+                        <ImageBrush ImageSource="/pictogrammen/check.png"/>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="Width" Value="60"/>
-                <Setter Property="Height" Value="47"/>
+                <Setter Property="Width" Value="50"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -218,24 +216,19 @@
     <!--Stijl voor TextBox van To Do (Andreas Steenackers) -->
     <Style TargetType="{x:Type TextBox}" x:Key="ToDoTextBox">
         <Setter Property="FontSize" Value="25"/>
-        <Setter Property="Width" Value="260"/>
+        <Setter Property="Width" Value="230"/>
         <Setter Property="Height" Value="38"/>
-        <Setter Property="Opacity" Value="0.5"/>
         <Setter Property="Margin" Value="0,10,0,0"/>
     </Style>
 
-    <Style TargetType="{x:Type Label}" x:Key="Labelcheck">
+       <!--Stijl voor label check (Andreas Steenackers)-->
+    <Style TargetType="{x:Type Image}" x:Key="Imgchecked">
         <Setter Property="Width" Value="60"/>
-        <Setter Property="Height" Value="47"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Margin" Value="0,0,10,5"/>
-        <Setter Property="Background">
-            <Setter.Value>
-                <ImageBrush ImageSource="/pictogrammen/check.png"/>
-            </Setter.Value>
-        </Setter>
     </Style>
 
+    <!--Stijl voor separator (Andreas STeenackers)-->
     <Style TargetType="{x:Type Separator}" x:Key="ToDoSeparator">
         <Setter Property="Background" Value="Black"/>
         <Setter Property="RenderTransform">
@@ -245,5 +238,14 @@
         </Setter>
         <Setter Property="Height" Value="3"/>
         <Setter Property="Margin" Value="0 -5 0 5"/>
+    </Style>
+    
+    <!--Stijl voor textbox in to do bewerk (Andreas Steenackers)-->
+    <Style TargetType="{x:Type TextBox}" x:Key="txtbToDoBewerk">
+        <Setter Property="Height" Value="260"/>
+        <Setter Property="Margin" Value="10,20,10,0"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="AcceptsReturn" Value="True"/>
     </Style>
 </ResourceDictionary>

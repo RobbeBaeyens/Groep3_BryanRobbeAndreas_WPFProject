@@ -58,7 +58,7 @@ namespace GRP3_Project_WPF
 
             if (lfp.CheckString(name) == false) 
             {
-                errors.Add()
+                
             }
         }
     }
