@@ -56,7 +56,8 @@
                                 <Separator/>
                                 <Label Padding="0" FontSize="8" Content="{Binding Dag}"></Label>
                                 <Label Padding="0" Content="{Binding DatumTijd}"></Label>
-                                <Button Margin="0 5" Width="120" Height="25" FontSize="16" Background="Orange" Content="SELECT" HorizontalAlignment="Left" Style="{StaticResource SelectButton}"/>
+                                <Button x:Name="btnEventSelect" Margin="0 5" Width="120" Height="25" FontSize="16" Background="Orange" Content="SELECT" HorizontalAlignment="Left" Style="{StaticResource SelectButton}" Click="btnEventSelect_Click"
+                                        Tag="{Binding EventId}"/>
                             </StackPanel>
                             <StackPanel Width="80" HorizontalAlignment="Right">
                                 <Image Width="70" Height="70" Source="{Binding Logo}"/>

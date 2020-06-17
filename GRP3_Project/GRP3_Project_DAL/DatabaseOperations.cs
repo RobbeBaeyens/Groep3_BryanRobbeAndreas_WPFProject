@@ -48,10 +48,18 @@ namespace GRP3_Project_DAL
         //updaten
         public static int UpdateEvent(Event eventitem)
         {
-            using (EventBeheerEntities entities = new EventBeheerEntities())
+            try
             {
-                entities.Entry(eventitem).State = EntityState.Modified;
-                return entities.SaveChanges();
+                using (EventBeheerEntities entities = new EventBeheerEntities())
+                {
+                    entities.Entry(eventitem).State = EntityState.Modified;
+                    return entities.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                //FileOperations.FoutLoggen(ex);
+                return 0;
             }
         }
 

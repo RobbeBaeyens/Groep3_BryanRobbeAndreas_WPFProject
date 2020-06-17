@@ -1,4 +1,4 @@
-﻿<Window x:Class="GRP3_Project_WPF.EventBewerken"
+﻿<Window x:Class="GRP3_Project_WPF.EventDetail"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -28,9 +28,9 @@
 
             <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddEvent"  Style="{StaticResource AddButtonHeader}" Height="62"></Button>
             <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
-                <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">EVENT</TextBlock>
+                <TextBlock x:Name="txtheadertext" FontFamily="MS Mincho"  Style="{StaticResource HeaderText}"></TextBlock>
                 <Separator Background="CornflowerBlue" Style="{StaticResource HeaderSeperator}"/>
-                <!--<TextBlock FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}">FUIF</TextBlock>-->
+                <TextBlock x:Name="txtheadersubtext" FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
             </StackPanel>
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
                 <Button x:Name="btnBack" Style="{StaticResource BackButton}" Click="btnBack_Click">
@@ -45,34 +45,29 @@
         </Grid>
 
         <StackPanel Margin="20">
-
-            <Label Content="Event Name:" Style="{StaticResource LabelStyle}" FontSize="20"/>
-            <TextBox x:Name="txtEventName" Style="{StaticResource RoundTextBox}" Height="35" FontSize="20" Padding="2.5"/>
-
-            <Label Content="Type:" Style="{StaticResource LabelStyle}" FontSize="20"/>
-            <ComboBox x:Name="cmbxTypes" Height="35" FontSize="20" Padding="2.5">
-            </ComboBox>
-
-            <Label Content="Date:" Style="{StaticResource LabelStyle}" FontSize="20"/>
-
-            <DatePicker x:Name="dpDate" Style="{StaticResource RoundDatePicker}" Height="35" FontSize="20" Padding="2.5"
-                        SelectedDateFormat="Long"/>
-
-            <Label Content="Start time:" Style="{StaticResource LabelStyle}" FontSize="20"/>
-            <TextBox x:Name="txtStartTime" Style="{StaticResource RoundTextBox}" Height="35" FontSize="20" Padding="2.5"/>
-
-            <Label Content="End time:" Style="{StaticResource LabelStyle}" FontSize="20"/>
-            <TextBox x:Name="txtEndTime" Style="{StaticResource RoundTextBox}" Height="35" FontSize="20" Padding="2.5">
-            </TextBox>
-
+            <Button Style="{StaticResource EventDetailButton}" Margin="0">
+                <DockPanel Margin="0" Width="360">
+                    <Image Source="/pictogrammen/todo.png" Margin="-6 12 12 12" HorizontalAlignment="Left"/>
+                    <StackPanel VerticalAlignment="Center" Margin="-16 0 0 0">
+                        <Label Content="TODO" Margin="0" Padding="0" FontSize="35"/>
+                        <Button x:Name="btnEventSelect" Padding="5" Margin="0" FontSize="16" Background="Orange" Content="15/20 Complete" HorizontalAlignment="Left" Style="{StaticResource TodoCompleteButton}"/>
+                    </StackPanel>
+                    <Image Source="/pictogrammen/nocheck.png" Width="45" Margin="15 0" HorizontalAlignment="Right"/>
+                </DockPanel>
+            </Button>
+            <Separator/>
+            <Button Style="{StaticResource EventDetailButton}" Margin="0">
+                <DockPanel Margin="0" Width="360">
+                    <Image Source="/pictogrammen/location.png" Margin="-6 12 12 12" HorizontalAlignment="Left"/>
+                    <StackPanel VerticalAlignment="Center" Margin="-16 0 0 0">
+                        <Label Content="LOCATION" Margin="0" Padding="0" FontSize="35"/>
+                        <Label Content="Feestzaal Den Eyck" Margin="0" Padding="0" FontSize="14"/>
+                        <Label Content="Kasterlee" Margin="0" Padding="0" FontSize="14"/>
+                    </StackPanel>
+                    <Image Source="/pictogrammen/check.png" Width="45" Margin="15 0" HorizontalAlignment="Right"/>
+                </DockPanel>
+            </Button>
         </StackPanel>
-
-        <DockPanel HorizontalAlignment="Center" Margin="0, 15, 0, 0">
-            <Button x:Name="btnSaveEvent"  Width="365" Height="40" FontSize="25"
-                    Content="SAVE" 
-                    Style="{StaticResource SaveButton}" Click="btnSaveEvent_Click"
-            />
-        </DockPanel>
 
     </StackPanel>
 </Window>
