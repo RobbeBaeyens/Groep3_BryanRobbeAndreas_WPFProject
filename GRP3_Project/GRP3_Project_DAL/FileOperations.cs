@@ -9,15 +9,14 @@ namespace GRP3_Project_DAL
 {
     class FileOperations
     {
-        public static void Foutloggen(Exception fout)
+        public static void FoutLoggen(Exception fout)
         {
             using (StreamWriter schrijver = new StreamWriter("gelogdeFouten.txt", true))
             {
-                schrijver.WriteLine(DateTime.Now.ToString("HH:mm:ss tt"));
-                schrijver.WriteLine(fout.GetType().Name);
+                schrijver.WriteLine(DateTime.Now.ToString("HH=mm:ss tt"));
                 schrijver.WriteLine(fout.Message);
-                schrijver.WriteLine(fout.StackTrace);
-                schrijver.WriteLine(new String('-', 80));
+                schrijver.WriteLine(new String('-', 30));
+                schrijver.WriteLine();
                 schrijver.WriteLine();
             }
         }
