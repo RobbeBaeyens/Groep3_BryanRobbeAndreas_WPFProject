@@ -23,7 +23,8 @@ namespace GRP3_Project_WPF
     {
         List<ToDo> todoList = new List<ToDo>();
         List<MoreToDoInfo> moreToDoInfo = new List<MoreToDoInfo>();
-        public ToDoOverzicht()
+        int eventID;
+        public ToDoOverzicht(int eventID)
         {
             InitializeComponent();
         }
