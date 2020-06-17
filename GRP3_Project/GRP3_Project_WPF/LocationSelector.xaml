@@ -40,14 +40,15 @@
                 </TextBlock>
 
                 <Separator Background="CornflowerBlue" Margin="12, -5, 12, 0" Grid.Column="1"  Style="{StaticResource HeaderSeperator}"/>
+                <TextBlock x:Name="txtHeaderSubtekst" FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
             </StackPanel>
             
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
-                <Button Style="{StaticResource BackButton}">
+                <Button x:Name="btnBack" Style="{StaticResource BackButton}" Click="btnBack_Click">
                     <Button.Content>
                         <TextBlock Width="411">
                             <Image Source="./pictogrammen/leftarrow.png"/>
-                            <TextBlock Margin="-10 -6 0 0"></TextBlock>
+                            <TextBlock x:Name="txtEventnaam" Margin="-10 -6 0 0"></TextBlock>
                         </TextBlock>
                     </Button.Content>
                 </Button>
@@ -57,8 +58,7 @@
         <StackPanel Margin="20">
             
             <Label Content="Select Location" Style="{StaticResource LabelStyle}"/>
-            <ComboBox x:Name="cmbSelectLocatie">
-                <ComboBoxItem Content="voorbeeld"/>
+            <ComboBox x:Name="cmbSelectLocatie" SelectionChanged="cmbSelectLocatie_SelectionChanged">
             </ComboBox>
 
             <Separator Margin="0, 15, 0, 10" Background="Black"/>
