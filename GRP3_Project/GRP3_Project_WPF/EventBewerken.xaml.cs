@@ -77,7 +77,9 @@ namespace GRP3_Project_WPF
         private void btnSaveEvent_Click(object sender, RoutedEventArgs e)
         {
             string foutmeldingen = Valideer("Eventtype");
-            if(string.IsNullOrWhiteSpace(foutmeldingen))
+            foutmeldingen += Valideer("Startuur");
+            foutmeldingen += Valideer("Einduur");
+            if (string.IsNullOrWhiteSpace(foutmeldingen))
             {
                 eventitem.Eventnaam = txtEventName.Text;
                 Eventtype selectedEventtype = (Eventtype)cmbxTypes.SelectedItem;
@@ -91,11 +93,24 @@ namespace GRP3_Project_WPF
                     if (eventId != -1)
                     {
                         eventitem.EventID = eventId;
-                        DatabaseOperations.UpdateEvent(eventitem);
+                        eventitem.Eventtype = selectedEventtype;
+
+                        int ok = DatabaseOperations.UpdateEvent(eventitem);
+
+                        if (ok > 0)
+                        {
+                            DatabaseOperations.UpdateEvent(eventitem);
+                            btnBack_Click(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Event is niet aangepast!");
+                        }
                     }
                     else
                     {
                         DatabaseOperations.AddEvent(eventitem);
+                        btnBack_Click(sender, e);
                     }
                 }
                 else

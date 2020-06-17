@@ -75,5 +75,14 @@ namespace GRP3_Project_WPF
         {
 
         }
+
+        private void btnEventSelect_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+
+            Window eventDetail = new EventDetail(int.Parse(b.Tag.ToString()));
+            Close();
+            eventDetail.Show();
+        }
     }
 }

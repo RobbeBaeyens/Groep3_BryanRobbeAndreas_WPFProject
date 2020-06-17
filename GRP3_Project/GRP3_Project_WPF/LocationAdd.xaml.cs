@@ -43,7 +43,14 @@ namespace GRP3_Project_WPF
 
         private void btnSaveLocation_Click(object sender, RoutedEventArgs e)
         {
-
+            locAdd.name = txtName.Text;
+            locAdd.street = txtStreet.Text;
+            locAdd.number = int.Parse(txtNumber.Text);
+            locAdd.postal = int.Parse(txtPostal.Text);
+            locAdd.city = txtCity.Text;
+            locAdd.manager = txtManager.Text;
+            locAdd.email = txtEmail.Text;
+            locAdd.phone = txtPhone.Text;
         }
     }
 }
