@@ -87,13 +87,18 @@ namespace GRP3_Project_WPF
             todo.Titel = txtToDoTitel.Text;
             todo.Omschrijving = txtbOmschrijving.Text;
             todo.Afgewerkt = (bool) tgbCheck.IsChecked;
-            todo.Volgnr = GetLastVolgnr();
             todo.EventID = eventItem.EventID;
+
+            if (toDoID == -1)
+            {
+                todo.Volgnr = GetLastVolgnr();
+            }
 
             if (todo.IsGeldig())
             {
                 if (toDoID != -1)
                 {
+                    
                     todo.ToDoID = toDoID;
                     todo.Event = eventItem;
                     int ok = DatabaseOperations.UpdateToDo(todo);

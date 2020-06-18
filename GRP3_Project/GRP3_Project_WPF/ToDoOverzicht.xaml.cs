@@ -80,7 +80,7 @@ namespace GRP3_Project_WPF
             Button b = sender as Button;
             todo = DatabaseOperations.OphalenTodo(int.Parse(b.Tag.ToString()));
 
-            MessageBoxResult result = MessageBox.Show("Wil je deze ToDO permanent verwijderen?", "#" + todo.Volgnr + " " + todo.Titel, MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+            MessageBoxResult result = MessageBox.Show("Wil je deze ToDo permanent verwijderen?", "#" + todo.Volgnr + " " + todo.Titel, MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             if(result == MessageBoxResult.Yes)
             {
                 DatabaseOperations.DeleteToDo(todo);
