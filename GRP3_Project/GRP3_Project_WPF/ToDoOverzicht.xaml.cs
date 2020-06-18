@@ -22,19 +22,19 @@ namespace GRP3_Project_WPF
     /// </summary>
     public partial class ToDoOverzicht : Window
     {
-        //hier wordt er een nieuwe eventitem gemaakt en ToDo
+        //Declareren van de variabelen
         Event eventitem = new Event();
         ToDo todo = new ToDo();
         int eventID;
 
-        //Hier wordt de eventId opgevraagd zodat er niet dezelfde ToDo komt te staan bij een andere event
+        //Hier wordt de eventID opgehaald
         public ToDoOverzicht(int eventID)
         {
             InitializeComponent();
             this.eventID = eventID;
         }
 
-        //laad alles op het wpf scherm
+        //laad alles op in het wpf scherm
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             eventitem = DatabaseOperations.OphalenEvent(eventID);

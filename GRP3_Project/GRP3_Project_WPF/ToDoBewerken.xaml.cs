@@ -56,6 +56,7 @@ namespace GRP3_Project_WPF
             txtHeaderSubText.Text = eventItem.Eventnaam;
             txtEventNaam.Text = eventItem.Eventnaam;
             lblVolgnr.Content = "#" + GetLastVolgnr();
+            //Als de ToDo bewerkt wordt dan passen we dit aan in het scherm
             if(toDoID != -1)
             {
                 txtToDoTitel.Text = todo.Titel;
@@ -97,36 +98,42 @@ namespace GRP3_Project_WPF
             {
                 todo.Volgnr = GetLastVolgnr();
             }
-
+            //Nakijken of alles wel klopt
             if (todo.IsGeldig())
             {
+                //Kijkt na of het een nieuw scherm is of een scherm dat je wil bewerken
                 if (toDoID != -1)
                 {
                     
                     todo.ToDoID = toDoID;
                     todo.Event = eventItem;
+
+                    //kijkt of de update uitgevoerd kan worden
                     int ok = DatabaseOperations.UpdateToDo(todo);
 
                     if (ok > 0)
                     {
+                        //Gaat de ToDo Update, daarna wordt er genavigeerd naar het vorige scherm.
                         DatabaseOperations.UpdateToDo(todo);
                         btnGoBack_Click(sender, e);
 
                     }
                     else
                     {
+                        //geeft MessageBox als de ToDo niet is aangepast
                         MessageBox.Show("ToDo is niet aangepast!");
                     }
                 }
                 else
                 {
-                    
+                    //Gaat een ToDo aanmaken en dan wordt terug genavigeerd naar het vorig scherm
                     DatabaseOperations.AddToDo(todo);
                     btnGoBack_Click(sender, e);
                 }
             }
             else
             {
+                //laat een error zien
                 MessageBox.Show(todo.Error);
             }
 
