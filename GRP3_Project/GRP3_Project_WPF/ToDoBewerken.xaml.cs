@@ -14,23 +14,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace GRP3_Project_WPF
-{
+{   // Andreas Steenackers
     /// <summary>
     /// Interaction logic for ToDoBewerken.xaml
     /// </summary>
     public partial class ToDoBewerken : Window
     {
+        //Hier wordt een nieuwe eventitem aangemaakt en een todo
         int toDoID = -1;
         int eventID;
         ToDo todo = new ToDo();
         Event eventItem = new Event();
 
+        //Hier wordt de eventID opgehaalt
         public ToDoBewerken(int eventID)
         {
             InitializeComponent();
             init(eventID);
         }
 
+        //Zorgt ervoor dat de todo een ToDoid toegewezen krijgt 
         public ToDoBewerken(int toDoId, int eventID)
         {
             InitializeComponent();
@@ -39,14 +42,14 @@ namespace GRP3_Project_WPF
             init(eventID);
         }
 
-
+        //hier wordt de eventID opgenomen en geplaats in een nieuwe eventitem
         private void init(int eventID)
         {
             this.eventID = eventID;
             eventItem = DatabaseOperations.OphalenEvent(eventID);
         }
 
-
+        //Zorgt ervoor dat alles opgeladen wordt
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -63,7 +66,7 @@ namespace GRP3_Project_WPF
         }
 
 
-
+        //Zorgt voor een navigatie naar de vorige pagina
         private void btnGoBack_Click(object sender, RoutedEventArgs e)
         {
             Window todoOverzicht = new ToDoOverzicht(eventID);
@@ -71,6 +74,7 @@ namespace GRP3_Project_WPF
             todoOverzicht.Show();
         }
 
+        //Dit gaat nakijken wat de laatste volgnr was en voegt hier 1 aan toe
         private int GetLastVolgnr()
         {
             List<ToDo> todoList = DatabaseOperations.OphalenToDos(eventID);
@@ -81,7 +85,7 @@ namespace GRP3_Project_WPF
             return todoList[todoList.Count - 1].Volgnr + 1;
          
         }
-
+        //Met deze knop kan je een nieuwe to do opslaan of als er een To Do bewerkt wordt, dan kan deze ook opgeslagen worden
         private void btnSaveToDo_Click(object sender, RoutedEventArgs e)
         {
             todo.Titel = txtToDoTitel.Text;

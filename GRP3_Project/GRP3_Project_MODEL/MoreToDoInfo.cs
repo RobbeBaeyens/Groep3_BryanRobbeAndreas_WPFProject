@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GRP3_Project_MODEL
 {
+    //Andreas Steenackers
     public class MoreToDoInfo
     {
         public int ToDoId { get; set; }
