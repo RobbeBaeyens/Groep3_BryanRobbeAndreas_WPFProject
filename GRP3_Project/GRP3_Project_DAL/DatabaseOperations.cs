@@ -127,7 +127,7 @@ namespace GRP3_Project_DAL
                 var query = entities.ToDo
                     .Include(x => x.Event)
                     .Where(x => x.EventID == eventId)
-                    .OrderBy(x => x.ToDoID);
+                    .OrderBy(x => x.Volgnr);
                 return query.ToList();
             }
         }

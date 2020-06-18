@@ -29,8 +29,6 @@ namespace GRP3_Project_WPF
         {
             InitializeComponent();
             init(eventID);
-            
-
         }
 
         public ToDoBewerken(int toDoId, int eventID)
@@ -54,19 +52,14 @@ namespace GRP3_Project_WPF
 
             txtHeaderSubText.Text = eventItem.Eventnaam;
             txtEventNaam.Text = eventItem.Eventnaam;
-
+            lblVolgnr.Content = "#" + GetLastVolgnr();
             if(toDoID != -1)
             {
                 txtToDoTitel.Text = todo.Titel;
                 txtbOmschrijving.Text = todo.Omschrijving;
                 tgbCheck.IsChecked = todo.Afgewerkt;
-                lblVolgnr.Content = todo.Volgnr;
-
-               
+                lblVolgnr.Content = "#" + todo.Volgnr;
             }
-
-
-
         }
 
 
@@ -78,12 +71,23 @@ namespace GRP3_Project_WPF
             todoOverzicht.Show();
         }
 
+        private int GetLastVolgnr()
+        {
+            List<ToDo> todoList = DatabaseOperations.OphalenToDos(eventID);
+            if (todoList.Count == 0)
+            {
+                return 0;
+            }
+            return todoList[todoList.Count - 1].Volgnr + 1;
+         
+        }
+
         private void btnSaveToDo_Click(object sender, RoutedEventArgs e)
         {
             todo.Titel = txtToDoTitel.Text;
             todo.Omschrijving = txtbOmschrijving.Text;
             todo.Afgewerkt = (bool) tgbCheck.IsChecked;
-            todo.Volgnr = 0;
+            todo.Volgnr = GetLastVolgnr();
             todo.EventID = eventItem.EventID;
 
             if (todo.IsGeldig())
