@@ -1,0 +1,15 @@
+﻿<Application x:Class="GRP3_Project_WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GRP3_Project_WPF"
+             StartupUri="EventsOverzicht.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Order is important -->
+                <ResourceDictionary Source="Styles/styles.xaml" />
+                <ResourceDictionary Source="Styles/combobox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

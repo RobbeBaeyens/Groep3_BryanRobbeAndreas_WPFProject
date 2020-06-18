@@ -1,0 +1,78 @@
+﻿<Window x:Class="GRP3_Project_WPF.EventBewerken"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GRP3_Project_WPF"
+        mc:Ignorable="d"
+        FontFamily="MS Mincho"
+        Title="EventsOverzicht" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411" Loaded="Window_Loaded">
+
+    <!--
+        ===================
+           Robbe Baeyens
+        ===================
+    -->
+    <StackPanel>
+        <Grid Style="{StaticResource Header}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddEvent"  Style="{StaticResource AddButtonHeader}" Height="62"></Button>
+            <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+                <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">EVENT</TextBlock>
+                <Separator Background="CornflowerBlue" Style="{StaticResource HeaderSeperator}"/>
+                <!--<TextBlock FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}">FUIF</TextBlock>-->
+            </StackPanel>
+            <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
+                <Button x:Name="btnBack" Style="{StaticResource BackButton}" Click="btnBack_Click">
+                    <Button.Content>
+                        <TextBlock Width="411">
+                            <Image Source="./pictogrammen/leftarrow.png"/>
+                            <TextBlock Margin="-10 -6 0 0"></TextBlock>
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
+            </DockPanel>
+        </Grid>
+
+        <StackPanel Margin="20">
+
+            <Label Content="Event Name:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+            <TextBox x:Name="txtEventName" Style="{StaticResource RoundTextBox}" Height="35" FontSize="20" Padding="2.5"/>
+
+            <Label Content="Type:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+            <ComboBox x:Name="cmbxTypes" Height="35" FontSize="20" Padding="2.5">
+            </ComboBox>
+
+            <Label Content="Date:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+
+            <DatePicker x:Name="dpDate" Style="{StaticResource RoundDatePicker}" Height="35" FontSize="20" Padding="2.5"
+                        SelectedDateFormat="Long"/>
+
+            <Label Content="Start time:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+            <TextBox x:Name="txtStartTime" Style="{StaticResource RoundTextBox}" Height="35" FontSize="20" Padding="2.5"/>
+
+            <Label Content="End time:" Style="{StaticResource LabelStyle}" FontSize="20"/>
+            <TextBox x:Name="txtEndTime" Style="{StaticResource RoundTextBox}" Height="35" FontSize="20" Padding="2.5">
+            </TextBox>
+
+        </StackPanel>
+
+        <DockPanel HorizontalAlignment="Center" Margin="0, 15, 0, 0">
+            <Button x:Name="btnSaveEvent"  Width="365" Height="40" FontSize="25"
+                    Content="SAVE" 
+                    Style="{StaticResource SaveButton}" Click="btnSaveEvent_Click"
+            />
+        </DockPanel>
+
+    </StackPanel>
+</Window>

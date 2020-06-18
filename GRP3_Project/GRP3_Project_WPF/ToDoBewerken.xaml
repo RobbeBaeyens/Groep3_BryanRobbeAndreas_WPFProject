@@ -1,0 +1,52 @@
+﻿<Window x:Class="GRP3_Project_WPF.ToDoBewerken"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GRP3_Project_WPF"
+        mc:Ignorable="d"
+        Title="ToDoBewerken" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411" Loaded="Window_Loaded">
+    <StackPanel >
+<!--Andreas steenackers-->
+        <Grid Style="{StaticResource Header}">
+            <!--header zoals op elke pagina enkel naam aanpassingen voor de ToDo scherm-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddToDo"  Style="{StaticResource AddButtonHeader}" Height="62"></Button>
+            <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+                <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">TODO</TextBlock>
+                <Separator Background="CornflowerBlue" Style="{StaticResource HeaderSeperator}"/>
+                <TextBlock x:Name="txtHeaderSubText" FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
+            </StackPanel>
+            <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
+                <Button x:Name="btnGoBack" Style="{StaticResource BackButton}" Click="btnGoBack_Click">
+                    <Button.Content>
+                        <TextBlock Width="411">
+                            <Image Source="./pictogrammen/leftarrow.png"/>
+                            <TextBlock x:Name="txtEventNaam" Margin="-10 -6 0 0"></TextBlock>
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
+            </DockPanel>
+        </Grid>
+
+<!-- Dockpanel zodat de labels, textbox en togglebutton naast elkaar komen te staan-->
+        <DockPanel>
+            <Label x:Name="lblVolgnr" Content="#1" FontSize="25px" Margin="0,10,0,0"/>
+            <Label Content="Titel:" FontSize="25px" Margin="0,10,0,0"/>
+            <TextBox x:Name="txtToDoTitel" Style="{StaticResource ToDoTextBox}"/>
+            <ToggleButton x:Name="tgbCheck" Style="{StaticResource ToDoButtonDone}" />
+        </DockPanel>
+<!--textbox omschrijving-->
+        <TextBox x:Name="txtbOmschrijving" Style="{StaticResource txtbToDoBewerk}"/>
+        <!--Save button voor ToDo-->
+        <Button x:Name="btnSaveToDo" Content="Save" Margin="0,20,0,0" Style="{StaticResource SaveButton}" Click="btnSaveToDo_Click"/>
+    </StackPanel>
+</Window>
