@@ -67,7 +67,7 @@ namespace GRP3_Project_WPF
         {
             if (hasLocation)
             {
-                Window locationSelector = new LocationSelector(eventId, eventitem.LocatieID);
+                Window locationSelector = new LocationSelector(eventId, (int)eventitem.LocatieID);
                 Close();
                 locationSelector.Show();
             }
