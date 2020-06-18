@@ -88,10 +88,12 @@
                     Content="DELETE" 
                     Margin="0, 0, 40, 0" 
                     Style="{StaticResource DeleteButton}"
+                    Click="btnDeleteLocation_Click"
             />
             <Button x:Name="btnSaveLocation" 
                     Content="SAVE" 
                     Style="{StaticResource SaveButton}"
+                    Click="btnSaveLocation_Click"
             />
         </DockPanel>
     </StackPanel>
