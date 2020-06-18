@@ -64,22 +64,22 @@
             <Separator Margin="0, 15, 0, 10" Background="Black"/>
 
             <Label Content="Name" Style="{StaticResource LabelStyle}"/>
-            <TextBox x:Name="txtName" Style="{StaticResource RoundTextBox}"/>
+            <TextBox IsReadOnly="True" x:Name="txtName" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Street &amp; Number" Style="{StaticResource LabelStyle}"/>
-            <TextBox x:Name="txtStreet" Style="{StaticResource RoundTextBox}"/>
+            <TextBox IsReadOnly="True" x:Name="txtStreet" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Postal Code &amp; City" Style="{StaticResource LabelStyle}"/>
-            <TextBox x:Name="txtPostCode" Style="{StaticResource RoundTextBox}"/>
+            <TextBox IsReadOnly="True" x:Name="txtPostCode" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Manager" Style="{StaticResource LabelStyle}"/>
-            <TextBox x:Name="txtManager" Style="{StaticResource RoundTextBox}"/>
+            <TextBox IsReadOnly="True" x:Name="txtManager" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="E-mail" Style="{StaticResource LabelStyle}"/>
-            <TextBox x:Name="txtEmail" Style="{StaticResource RoundTextBox}"/>
+            <TextBox IsReadOnly="True" x:Name="txtEmail" Style="{StaticResource RoundTextBox}"/>
 
             <Label Content="Phone" Style="{StaticResource LabelStyle}"/>
-            <TextBox x:Name="txtPhone" Style="{StaticResource RoundTextBox}"/>
+            <TextBox IsReadOnly="True" x:Name="txtPhone" Style="{StaticResource RoundTextBox}"/>
             
         </StackPanel>
 

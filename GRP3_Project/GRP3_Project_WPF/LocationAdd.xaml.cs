@@ -25,16 +25,29 @@ namespace GRP3_Project_WPF
     /// </summary>
     public partial class LocationAdd : Window
     {
-        public LocationAdd()
+        int eventId;
+        Event eventItem = new Event();
+
+        public LocationAdd(int eventId)
         {
             InitializeComponent();
+
+            this.eventId = eventId;
+
+            eventItem = DatabaseOperations.OphalenEvent(eventId);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtHeaderSubtekst.Text = eventItem.Eventnaam;
+            txtEventName.Text = eventItem.Eventnaam;
         }
 
         private void btnBackToLocationSelector_Click(object sender, RoutedEventArgs e)
         {
-            //Window backToLocSel = new LocationSelector();
-            //backToLocSel.Show();
-            //Close();
+            Window backToLocSel = new EventDetail(eventId);
+            backToLocSel.Show();
+            Close();
         }
 
         private void btnSaveLocation_Click(object sender, RoutedEventArgs e)
@@ -42,9 +55,11 @@ namespace GRP3_Project_WPF
             string foutmeldingen = Valideer("Huisnr");
             foutmeldingen += Valideer("Postcode");
 
+            Locatie locatie = new Locatie();
+
             if (string.IsNullOrWhiteSpace(foutmeldingen))
             {
-                Locatie locatie = new Locatie();
+                
 
                 locatie.Naam = txtName.Text;
                 locatie.Straat = txtStreet.Text;
@@ -76,7 +91,7 @@ namespace GRP3_Project_WPF
             }
             else
             {
-                MessageBox.Show(foutmeldingen);
+                MessageBox.Show($"{foutmeldingen} {locatie.Error}");
             }
         }
 
@@ -88,11 +103,7 @@ namespace GRP3_Project_WPF
             }
             if (input == "Postcode" && (!int.TryParse(txtPostal.Text, out int postcode) || string.IsNullOrWhiteSpace(txtPostal.Text)))
             {
-
-                
-
                 return "Vul een correcte postcode in!" + Environment.NewLine;
-
             }
             return "";
         }

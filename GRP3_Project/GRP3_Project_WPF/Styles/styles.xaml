@@ -217,12 +217,14 @@
             </Style>
         </Style.Resources>
     </Style>
-    
+
     <!--Stijl voor Label's (Bryan Antonis)-->
     <Style TargetType="{x:Type Label}" x:Key="LabelStyle">
         <Setter Property="FontFamily" Value="MS Mincho"/>
         <Setter Property="FontSize" Value="16"/>
     </Style>
+    
+    
 
     <!--Stijl voor hoverless ToggleButton (Andreas Steenackers)-->
     <Style TargetType="{x:Type ToggleButton}" x:Key="tbHoverless">
