@@ -50,6 +50,8 @@ namespace GRP3_Project_WPF
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            List<Locatie> locaties = new List<Locatie>();
+            locaties = DatabaseOperations.OphalenLocaties();
 
             txtName.Text = locatie.Naam;
             txtStreet.Text = $"{locatie.Straat} {locatie.Huisnr}";
@@ -64,9 +66,17 @@ namespace GRP3_Project_WPF
             txtEventnaam.Text = eventItem.Eventnaam;
 
             cmbSelectLocatie.DisplayMemberPath = "Naam";
-            cmbSelectLocatie.ItemsSource = DatabaseOperations.OphalenLocaties();
+            cmbSelectLocatie.ItemsSource = locaties;
 
-            
+            for (int i = 0; i < locaties.Count; i++)
+            {
+                if (locatie.Naam == locaties[i].Naam)
+                {
+                    cmbSelectLocatie.SelectedIndex = i;
+                }
+            }
+
+
         }
 
         private void btnAddLocation_Click(object sender, RoutedEventArgs e)
