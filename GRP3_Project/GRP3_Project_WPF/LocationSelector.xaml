@@ -10,7 +10,10 @@
                                  MaxHeight="731" MaxWidth="411"
                                  Loaded="Window_Loaded">
     <!--BRYAN ANTONIS-->
+    
     <StackPanel>
+
+        <!--Grid voor bovenste zwarte balk-->
         <Grid Style="{StaticResource Header}">
 
             <Grid.ColumnDefinitions>
@@ -40,7 +43,7 @@
                 </TextBlock>
 
                 <Separator Background="CornflowerBlue" Margin="12, -5, 12, 0" Grid.Column="1"  Style="{StaticResource HeaderSeperator}"/>
-                <TextBlock x:Name="txtHeaderSubtekst" FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
+                <TextBlock Margin="0, 5, 0, 0" x:Name="txtHeaderSubtekst" FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
             </StackPanel>
             
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
@@ -57,39 +60,51 @@
 
         <StackPanel Margin="20">
             
+            <!--Combobox voor weergave en selectie voor locatie-->
             <Label Content="Select Location" Style="{StaticResource LabelStyle}"/>
             <ComboBox x:Name="cmbSelectLocatie" SelectionChanged="cmbSelectLocatie_SelectionChanged">
             </ComboBox>
 
             <Separator Margin="0, 15, 0, 10" Background="Black"/>
 
+            <!--Textbox voor invoer naam-->
             <Label Content="Name" Style="{StaticResource LabelStyle}"/>
             <TextBox IsReadOnly="True" x:Name="txtName" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Textbox voor invoer huisnummer-->
             <Label Content="Street &amp; Number" Style="{StaticResource LabelStyle}"/>
             <TextBox IsReadOnly="True" x:Name="txtStreet" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Textbox voor invoer stad-->
             <Label Content="Postal Code &amp; City" Style="{StaticResource LabelStyle}"/>
             <TextBox IsReadOnly="True" x:Name="txtPostCode" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Textbox voor invoer manager-->
             <Label Content="Manager" Style="{StaticResource LabelStyle}"/>
             <TextBox IsReadOnly="True" x:Name="txtManager" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Textbox voor invoer email-->
             <Label Content="E-mail" Style="{StaticResource LabelStyle}"/>
             <TextBox IsReadOnly="True" x:Name="txtEmail" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Textbox voor invoer telefoon-->
             <Label Content="Phone" Style="{StaticResource LabelStyle}"/>
             <TextBox IsReadOnly="True" x:Name="txtPhone" Style="{StaticResource RoundTextBox}"/>
             
         </StackPanel>
 
+        <!--Dockpanel voor knoppen naast elkaar te zetten-->
         <DockPanel HorizontalAlignment="Center" Margin="0, 15, 0, 0">
+            
+            <!--Knop om de locatie bij evenement te verwijderen-->
             <Button x:Name="btnDeleteLocation" 
                     Content="DELETE" 
                     Margin="0, 0, 40, 0" 
                     Style="{StaticResource DeleteButton}"
                     Click="btnDeleteLocation_Click"
             />
+            
+            <!--Knop om de locatie bij evenement toe te voegen (updaten) -->
             <Button x:Name="btnSaveLocation" 
                     Content="SAVE" 
                     Style="{StaticResource SaveButton}"

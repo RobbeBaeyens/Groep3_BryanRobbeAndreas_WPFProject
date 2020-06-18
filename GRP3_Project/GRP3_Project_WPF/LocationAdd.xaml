@@ -11,9 +11,11 @@
                             Loaded="Window_Loaded">
     
     <!--BRYAN ANTONIS-->
+    
     <StackPanel>
+        
+        <!--Grid voor bovenste zwarte balk-->
         <Grid Style="{StaticResource Header}">
-
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -37,7 +39,7 @@
                 </TextBlock>
 
                 <Separator Background="CornflowerBlue" Margin="12, -5, 12, 0" Grid.Column="1"  Style="{StaticResource HeaderSeperator}"/>
-                <TextBlock x:Name="txtHeaderSubtekst" FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
+                <TextBlock Margin="0, 5, 0, 0" x:Name="txtHeaderSubtekst" FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
             </StackPanel>
 
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
@@ -56,32 +58,41 @@
 
         <StackPanel Margin="20">
 
+            <!--Naam ingave-->
             <Label Content="Name" Style="{StaticResource LabelStyle}"/>
             <TextBox x:Name="txtName" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Straat ingave-->
             <Label Content="Street" Style="{StaticResource LabelStyle}"/>
             <TextBox x:Name="txtStreet" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Nummer ingave-->
             <Label Content="Number" Style="{StaticResource LabelStyle}"/>
             <TextBox x:Name="txtNumber" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Postcode ingave-->
             <Label Content="Postal Code" Style="{StaticResource LabelStyle}"/>
             <TextBox x:Name="txtPostal" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Stad ingave-->
             <Label Content="City" Style="{StaticResource LabelStyle}"/>
             <TextBox x:Name="txtCity" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Manager ingave-->
             <Label Content="Manager" Style="{StaticResource LabelStyle}"/>
             <TextBox x:Name="txtManager" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Email ingave-->
             <Label Content="E-mail" Style="{StaticResource LabelStyle}"/>
             <TextBox x:Name="txtEmail" Style="{StaticResource RoundTextBox}"/>
 
+            <!--Telefoon ingave-->
             <Label Content="Phone" Style="{StaticResource LabelStyle}"/>
             <TextBox x:Name="txtPhone" Style="{StaticResource RoundTextBox}"/>
 
         </StackPanel>
         
+        <!--Knop voor opslaan van locatie-->
         <Button x:Name="btnSaveLocation" 
                 HorizontalAlignment="Center" 
                 Content="SAVE" 

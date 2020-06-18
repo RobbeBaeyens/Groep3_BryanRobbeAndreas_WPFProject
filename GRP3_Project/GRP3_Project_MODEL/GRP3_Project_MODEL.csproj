@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basisklasse.cs" />
-    <Compile Include="LocationFormProperties.cs" />
     <Compile Include="MoreToDoInfo.cs" />
     <Compile Include="MoreEventInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
