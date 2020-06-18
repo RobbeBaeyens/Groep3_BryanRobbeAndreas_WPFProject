@@ -56,7 +56,7 @@ namespace GRP3_Project_DAL
                     return entities.SaveChanges();
                 }
             }
-            catch (Exception ex)
+            catch (Exception ngex)
             {
                 //FileOperations.FoutLoggen(ex);
                 return 0;
@@ -109,14 +109,24 @@ namespace GRP3_Project_DAL
                 return entities.SaveChanges();
             }
         }
-        
+        //deleten
+        public static int DeleteToDo(ToDo todo)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                entities.Entry(todo).State = EntityState.Deleted;
+                return entities.SaveChanges();
+            }
+        }
+
         //ophalen lijst
-        public static List<ToDo> OphalenToDos()
+        public static List<ToDo> OphalenToDos(int eventId)
         {
             using (EventBeheerEntities entities = new EventBeheerEntities())
             {
                 var query = entities.ToDo
                     .Include(x => x.Event)
+                    .Where(x => x.EventID == eventId)
                     .OrderBy(x => x.ToDoID);
                 return query.ToList();
             }

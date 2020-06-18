@@ -11,7 +11,7 @@ namespace GRP3_Project_MODEL
         public int ToDoId { get; set; }
         public string Titel { get; set; }
         public string Omschrijving { get; set; }
-        public int Volgnr { get; set; }
-        public bool ImgChecked { get; set; }
+        public string Volgnr { get; set; }
+        public string ImgChecked { get; set; }
     }
 }

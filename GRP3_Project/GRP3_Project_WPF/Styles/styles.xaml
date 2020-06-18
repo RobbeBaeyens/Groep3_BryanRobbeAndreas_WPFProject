@@ -157,7 +157,7 @@
 
 
     <!--Delete Button rond (Bryan Antonis)-->
-    <Style TargetType="{x:Type Button}" x:Key="DeleteButton">
+    <Style TargetType="{x:Type Button}" x:Key="DeleteButton" BasedOn="{StaticResource Hoverless}">
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="OrangeRed"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
@@ -168,10 +168,17 @@
                 <Setter Property="CornerRadius" Value="8"/>
             </Style>
         </Style.Resources>
+      <Style.Triggers>
+        <Trigger Property="IsMouseOver" Value="True">
+          <Setter Property="Foreground" Value="Black"/>
+          <Setter Property="Background" Value="Pink"/>
+          <Setter Property="BorderThickness" Value="0"/>
+        </Trigger>
+      </Style.Triggers>
     </Style>
 
     <!--Save Button rond (Bryan Antonis)-->
-    <Style TargetType="{x:Type Button}" x:Key="SaveButton">
+    <Style TargetType="{x:Type Button}" x:Key="SaveButton" BasedOn="{StaticResource Hoverless}">
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="DodgerBlue"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
@@ -182,6 +189,13 @@
                 <Setter Property="CornerRadius" Value="8"/>
             </Style>
         </Style.Resources>
+      <Style.Triggers>
+        <Trigger Property="IsMouseOver" Value="True">
+          <Setter Property="Foreground" Value="Black"/>
+          <Setter Property="Background" Value="LightBlue"/>
+          <Setter Property="BorderThickness" Value="0"/>
+        </Trigger>
+      </Style.Triggers>
     </Style>
     
     <!--Ronde stijl voor Combobox (Bryan Antonis)-->
@@ -258,7 +272,7 @@
 
        <!--Stijl voor label check (Andreas Steenackers)-->
     <Style TargetType="{x:Type Image}" x:Key="Imgchecked">
-        <Setter Property="Width" Value="60"/>
+        <Setter Property="Height" Value="30"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Margin" Value="0,0,10,5"/>
     </Style>
