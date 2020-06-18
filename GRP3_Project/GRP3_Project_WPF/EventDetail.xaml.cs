@@ -74,10 +74,18 @@ namespace GRP3_Project_WPF
             string startImagePath = "pack://application:,,,/pictogrammen/";
             //ToDo
             List<ToDo> toDos = DatabaseOperations.OphalenToDos(eventId);
-
+            List<ToDo> toDosComplete = DatabaseOperations.OphalenToDosComplete(eventId);
+            txtToDoCompleted.Content = $"{toDosComplete.Count}/{toDos.Count} Complete";
+            imgToDoCheck.Source = (toDos.Count == toDosComplete.Count) ? new BitmapImage(new Uri(startImagePath + "check.png")) : new BitmapImage(new Uri(startImagePath + "nocheck.png"));
 
             //Locatie
             imgLocationCheck.Source = (eventitem.LocatieID == null) ? new BitmapImage(new Uri(startImagePath + "nocheck.png")) : new BitmapImage(new Uri(startImagePath + "check.png"));
+            if(eventitem.LocatieID != null)
+            {
+                eventitem.Locatie = DatabaseOperations.OphalenLocatie((int)eventitem.LocatieID);
+                txtLocatieNaam.Content = eventitem.Locatie.Naam;
+                txtGemeente.Content = eventitem.Locatie.Gemeente;
+            }
         }
     }
 }
