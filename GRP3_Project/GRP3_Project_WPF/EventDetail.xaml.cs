@@ -28,6 +28,7 @@ namespace GRP3_Project_WPF
     {
         int eventId = -1;
         Event eventitem = new Event();
+        bool hasLocation = false;
 
         public EventDetail()
         {
@@ -64,9 +65,18 @@ namespace GRP3_Project_WPF
 
         private void btnLocation_Click(object sender, RoutedEventArgs e)
         {
-            Window locationSelector = new LocationSelector(eventId);
-            Close();
-            locationSelector.Show();
+            if (hasLocation)
+            {
+                Window locationSelector = new LocationSelector(eventId, eventitem.LocatieID);
+                Close();
+                locationSelector.Show();
+            }
+            else
+            {
+                Window locationSelector = new LocationSelector(eventId);
+                Close();
+                locationSelector.Show();
+            }
         }
 
         private void testIfComplete()
@@ -85,6 +95,7 @@ namespace GRP3_Project_WPF
                 eventitem.Locatie = DatabaseOperations.OphalenLocatie((int)eventitem.LocatieID);
                 txtLocatieNaam.Content = eventitem.Locatie.Naam;
                 txtGemeente.Content = eventitem.Locatie.Gemeente;
+                hasLocation = true;
             }
         }
     }
