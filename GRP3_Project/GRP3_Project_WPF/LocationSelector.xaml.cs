@@ -28,8 +28,6 @@ namespace GRP3_Project_WPF
 
         Event eventItem = new Event();
 
-        
-
 
         public LocationSelector(int eventId)
         {
@@ -39,8 +37,29 @@ namespace GRP3_Project_WPF
             eventItem = DatabaseOperations.OphalenEvent(eventId);
         }
 
+
+        public LocationSelector(int eventId, int locatieId)
+        {
+            InitializeComponent();
+            this.eventId = eventId;
+
+            eventItem = DatabaseOperations.OphalenEvent(eventId);
+
+            locatie = DatabaseOperations.OphalenLocatie(locatieId);
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+            txtName.Text = locatie.Naam;
+            txtStreet.Text = $"{locatie.Straat} {locatie.Huisnr}";
+            txtPostCode.Text = $"{locatie.Postcode} {locatie.Gemeente}";
+            txtManager.Text = locatie.Manager;
+            txtEmail.Text = locatie.Email;
+            txtPhone.Text = locatie.Telefoon;
+
+
+
             txtHeaderSubtekst.Text = eventItem.Eventnaam;
             txtEventnaam.Text = eventItem.Eventnaam;
 
