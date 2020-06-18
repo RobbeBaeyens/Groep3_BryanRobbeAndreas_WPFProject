@@ -32,6 +32,7 @@ namespace GRP3_Project_DAL
             {
                 var query = entities.Event
                     .Include(x => x.Eventtype)
+                    .Include(x => x.ToDo)
                     .Where(x => x.EventID == eventId);
                 return query.SingleOrDefault();
             }
@@ -58,9 +59,17 @@ namespace GRP3_Project_DAL
             }
             catch (Exception ngex)
             {
-                //FileOperations.FoutLoggen(ex);
                 return 0;
             }
+        }
+        //deleten
+        public static int DeleteEvent(Event eventitem)
+        {
+             using (EventBeheerEntities entities = new EventBeheerEntities())
+             {
+                 entities.Entry(eventitem).State = EntityState.Deleted;
+                 return entities.SaveChanges();
+             }
         }
 
         /*=====================

@@ -30,17 +30,8 @@
             <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
                 <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">EVENTS</TextBlock>
                 <Separator Background="CornflowerBlue" Style="{StaticResource HeaderSeperator}"/>
-                <!--<TextBlock FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}">FUIF</TextBlock>-->
             </StackPanel>
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
-                <!--<Button Style="{StaticResource BackButton}">
-                    <Button.Content>
-                        <TextBlock Width="411">
-                            <Image Source="./pictogrammen/leftarrow.png"/>
-                            <TextBlock Margin="-10 -6 0 0"></TextBlock>
-                        </TextBlock>
-                    </Button.Content>
-                </Button>-->
             </DockPanel>
         </Grid>
 
@@ -66,7 +57,8 @@
                                             Tag="{Binding EventId}">
                                         <Image Source="/pictogrammen/BlackSetup.png"/>
                                     </Button>
-                                    <Button x:Name="btnEventVerwijderen" Width="35" Margin="0" Padding="0" Style="{StaticResource Hoverless}" Click="btnEventVerwijderen_Click">
+                                    <Button x:Name="btnEventVerwijderen" Width="35" Margin="0" Padding="0" Style="{StaticResource Hoverless}" Click="btnEventVerwijderen_Click"
+                                            Tag="{Binding EventId}">
                                         <Image Source="/pictogrammen/trash.png"/>
                                     </Button>
                                 </DockPanel>

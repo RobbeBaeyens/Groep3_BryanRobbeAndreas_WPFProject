@@ -12,6 +12,9 @@ using GRP3_Project_MODEL;
 
 namespace GRP3_Project_DAL
 {
+    /*deelklasse van Event en erft van basisklasse
+     *valideert of de ingevulde gegevens correct zijn om in de database gezet te mogen worden
+     */
     public partial class Event : BasisKlasse
     {
         public override string this[string columnName]
