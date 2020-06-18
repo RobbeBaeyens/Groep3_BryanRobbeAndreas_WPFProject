@@ -52,19 +52,19 @@
                         <Label Content="TODO" Margin="0" Padding="0" FontSize="35"/>
                         <Button x:Name="btnEventSelect" Padding="5" Margin="0" FontSize="16" Background="Orange" Content="15/20 Complete" HorizontalAlignment="Left" Style="{StaticResource TodoCompleteButton}"/>
                     </StackPanel>
-                    <Image Source="/pictogrammen/nocheck.png" Width="45" Margin="15 0" HorizontalAlignment="Right"/>
+                    <Image x:Name="imgToDoCheck" Source="/pictogrammen/nocheck.png" Width="45" Margin="15 0" HorizontalAlignment="Right"/>
                 </DockPanel>
             </Button>
             <Separator/>
-            <Button x:Name="btnLocation" Style="{StaticResource EventDetailButton}" Margin="0" Click="btnLocation_Click">
-                <DockPanel Margin="0" Width="360">
+            <Button Style="{StaticResource EventDetailButton}" Margin="0" Click="btnLocation_Click">
+                <DockPanel x:Name="dckpLocation" Margin="0" Width="360">
                     <Image Source="/pictogrammen/location.png" Margin="-6 12 12 12" HorizontalAlignment="Left"/>
                     <StackPanel VerticalAlignment="Center" Margin="-16 0 0 0">
                         <Label Content="LOCATION" Margin="0" Padding="0" FontSize="35"/>
                         <Label Content="Feestzaal Den Eyck" Margin="0" Padding="0" FontSize="14"/>
                         <Label Content="Kasterlee" Margin="0" Padding="0" FontSize="14"/>
                     </StackPanel>
-                    <Image Source="/pictogrammen/check.png" Width="45" Margin="15 0" HorizontalAlignment="Right"/>
+                    <Image x:Name="imgLocationCheck" Source="/pictogrammen/nocheck.png" Width="45" Margin="15 0" HorizontalAlignment="Right"/>
                 </DockPanel>
             </Button>
         </StackPanel>
