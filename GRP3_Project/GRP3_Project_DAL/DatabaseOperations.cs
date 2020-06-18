@@ -12,7 +12,7 @@ namespace GRP3_Project_DAL
     public class DatabaseOperations
     {
         /*=====================
-         * EVENT
+         * EVENT Robbe Baeyens
          =====================*/
         //ophalen lijst
         public static List<Event> OphalenEvents()
@@ -64,7 +64,7 @@ namespace GRP3_Project_DAL
         }
 
         /*=====================
-         * EventType
+         * EventType Robbe Baeyens
          =====================*/
         //ophalen
         public static List<Eventtype> OphalenEventTypes()
@@ -73,6 +73,23 @@ namespace GRP3_Project_DAL
             {
                 var query = entities.Eventtype
                     .OrderBy(x => x.EventtypeID);
+                return query.ToList();
+            }
+        }
+
+        /*=====================
+         *  TODO Robbe Baeyens
+         =====================*/
+        //ophalen lijst complete
+        public static List<ToDo> OphalenToDosComplete(int eventId)
+        {
+            using (EventBeheerEntities entities = new EventBeheerEntities())
+            {
+                var query = entities.ToDo
+                    .Include(x => x.Event)
+                    .Where(x => x.EventID == eventId)
+                    .Where(x => x.Afgewerkt == true)
+                    .OrderBy(x => x.ToDoID);
                 return query.ToList();
             }
         }
