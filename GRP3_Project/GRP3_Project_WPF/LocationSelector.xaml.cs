@@ -23,7 +23,9 @@ namespace GRP3_Project_WPF
     public partial class LocationSelector : Window
     {
         int eventId;
-        //List<Locatie> locaties = new List<Locatie>();
+
+        Locatie locatie = new Locatie();
+
         Event eventItem = new Event();
 
         
@@ -64,7 +66,7 @@ namespace GRP3_Project_WPF
 
         private void cmbSelectLocatie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Locatie locatie = cmbSelectLocatie.SelectedItem as Locatie;
+            locatie = cmbSelectLocatie.SelectedItem as Locatie;
 
             txtName.Text = locatie.Naam;
             txtStreet.Text = $"{locatie.Straat} {locatie.Huisnr}";
@@ -72,6 +74,44 @@ namespace GRP3_Project_WPF
             txtManager.Text = locatie.Manager;
             txtEmail.Text = locatie.Email;
             txtPhone.Text = locatie.Telefoon;
+        }
+
+        private void btnDeleteLocation_Click(object sender, RoutedEventArgs e)
+        {
+            eventItem.LocatieID = null;
+
+            if (eventItem.IsGeldig())
+            {
+
+
+                MessageBoxResult result = MessageBox.Show("Wil je deze Locatie uit het event halen?", "Locatie verwijderen", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+                if (result == MessageBoxResult.Yes)
+                {
+                    DatabaseOperations.UpdateEvent(eventItem);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Event is niet geldig!");
+            }
+
+
+        }
+
+        private void btnSaveLocation_Click(object sender, RoutedEventArgs e)
+        {
+            if (cmbSelectLocatie.SelectedItem != null)
+            {
+                eventItem.LocatieID = locatie.LocatieID;
+
+                DatabaseOperations.UpdateEvent(eventItem);
+
+                MessageBox.Show("Locatie aan event toegevoegd!");
+            }
+            else
+            {
+                MessageBox.Show("Selecteer of voeg een locatie toe!");
+            }
         }
     }
 }
