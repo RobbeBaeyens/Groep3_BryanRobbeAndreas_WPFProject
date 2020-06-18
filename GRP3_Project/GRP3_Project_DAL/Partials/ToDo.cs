@@ -18,7 +18,19 @@ namespace GRP3_Project_DAL
                 {
                     return "Vul een titel in!";
                 }
-               
+                if (columnName == "Omschrijving" && String.IsNullOrWhiteSpace(Omschrijving))
+                {
+                    return "Vul een omschijving in!";
+                }
+                if (columnName == "Afgewerkt" && Afgewerkt.GetType() != typeof(bool))
+                {
+                    return "Vink aan of af!";
+                }
+                if (columnName == "Volgnr" && Volgnr.GetType() != typeof(int))
+                {
+                    return "Volgnummer incorrect!";
+                }
+
                 return "";
             }
         }
