@@ -37,6 +37,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pictogrammen\icon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -198,6 +201,12 @@
     <Resource Include="pictogrammen\vat.png" />
     <Resource Include="pictogrammen\whiteclock.png" />
     <Resource Include="pictogrammen\WhiteSetup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictogrammen\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictogrammen\icon %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
