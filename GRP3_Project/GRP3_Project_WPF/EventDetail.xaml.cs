@@ -44,6 +44,8 @@ namespace GRP3_Project_WPF
         {
             txtheadertext.Text = eventitem.Eventnaam;
             txtheadersubtext.Text = eventitem.Eventtype.Naam;
+
+            testIfComplete();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -65,6 +67,17 @@ namespace GRP3_Project_WPF
             Window locationSelector = new LocationSelector(eventId);
             Close();
             locationSelector.Show();
+        }
+
+        private void testIfComplete()
+        {
+            string startImagePath = "pack://application:,,,/pictogrammen/";
+            //ToDo
+            List<ToDo> toDos = DatabaseOperations.OphalenToDos(eventId);
+
+
+            //Locatie
+            imgLocationCheck.Source = (eventitem.LocatieID == null) ? new BitmapImage(new Uri(startImagePath + "nocheck.png")) : new BitmapImage(new Uri(startImagePath + "check.png"));
         }
     }
 }
