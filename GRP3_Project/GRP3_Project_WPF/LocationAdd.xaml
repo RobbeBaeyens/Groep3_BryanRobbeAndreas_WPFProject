@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="LocationAdd" Height="731" Width="411" 
                             MinHeight="731" MinWidth="411"
-                            MaxHeight="731" MaxWidth="411">
+                            MaxHeight="731" MaxWidth="411"
+                            Loaded="Window_Loaded">
     
     <!--BRYAN ANTONIS-->
     <StackPanel>
@@ -36,6 +37,7 @@
                 </TextBlock>
 
                 <Separator Background="CornflowerBlue" Margin="12, -5, 12, 0" Grid.Column="1"  Style="{StaticResource HeaderSeperator}"/>
+                <TextBlock x:Name="txtHeaderSubtekst" FontFamily="MS Mincho" Style="{StaticResource HeaderSubText}"></TextBlock>
             </StackPanel>
 
             <DockPanel x:Name="BackBanner" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource HeaderBack}">
@@ -45,7 +47,7 @@
                     <Button.Content>
                         <TextBlock Width="411">
                             <Image Source="./pictogrammen/leftarrow.png"/>
-                            <TextBlock Margin="-10 -6 0 0"></TextBlock>
+                            <TextBlock x:Name="txtEventName" Margin="-10 -6 0 0"></TextBlock>
                         </TextBlock>
                     </Button.Content>
                 </Button>

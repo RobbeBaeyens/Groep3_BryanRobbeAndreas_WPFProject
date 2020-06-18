@@ -23,8 +23,10 @@ namespace GRP3_Project_WPF
     public partial class LocationSelector : Window
     {
         int eventId;
-        List<Locatie> locaties = new List<Locatie>();
+        //List<Locatie> locaties = new List<Locatie>();
         Event eventItem = new Event();
+
+        
 
 
         public LocationSelector(int eventId)
@@ -33,24 +35,22 @@ namespace GRP3_Project_WPF
             this.eventId = eventId;
 
             eventItem = DatabaseOperations.OphalenEvent(eventId);
-
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //cmbSelectLocatie.DisplayMemberPath = "Naam";
-
             txtHeaderSubtekst.Text = eventItem.Eventnaam;
             txtEventnaam.Text = eventItem.Eventnaam;
 
             cmbSelectLocatie.DisplayMemberPath = "Naam";
             cmbSelectLocatie.ItemsSource = DatabaseOperations.OphalenLocaties();
+
             
         }
 
         private void btnAddLocation_Click(object sender, RoutedEventArgs e)
         {
-            Window locationAdd = new LocationAdd();
+            Window locationAdd = new LocationAdd(eventId);
             locationAdd.Show();
             Close();
         }
@@ -58,11 +58,8 @@ namespace GRP3_Project_WPF
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Window eventDetail = new EventDetail(eventId);
-
             eventDetail.Show();
-
             Close();
-
         }
 
         private void cmbSelectLocatie_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -70,8 +67,8 @@ namespace GRP3_Project_WPF
             Locatie locatie = cmbSelectLocatie.SelectedItem as Locatie;
 
             txtName.Text = locatie.Naam;
-            txtStreet.Text = locatie.Straat + " " + locatie.Huisnr.ToString();
-            txtPostCode.Text = locatie.Postcode.ToString() + ", " + locatie.Gemeente;
+            txtStreet.Text = $"{locatie.Straat} {locatie.Huisnr}";
+            txtPostCode.Text = $"{locatie.Postcode} {locatie.Gemeente}";
             txtManager.Text = locatie.Manager;
             txtEmail.Text = locatie.Email;
             txtPhone.Text = locatie.Telefoon;
