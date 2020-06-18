@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRP3_Project_WPF"
         mc:Ignorable="d"
-        Title="ToDoOverzicht" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411">
+        Title="ToDoOverzicht" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411" Loaded="Window_Loaded">
     <StackPanel>
         <Grid Style="{StaticResource Header}">
 
