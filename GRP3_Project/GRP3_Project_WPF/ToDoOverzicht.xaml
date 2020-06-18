@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:GRP3_Project_WPF"
         mc:Ignorable="d"
         Title="ToDoOverzicht" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411" Loaded="Window_Loaded">
+   <!--Andreas Steenackers-->
     <StackPanel>
         <Grid Style="{StaticResource Header}">
-
+            <!--header zoals op elke pagina enkel naam aanpassingen voor de ToDo scherm-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -18,7 +19,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
             <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddToDo"  Style="{StaticResource AddButtonHeader}" Click="btnAddToDo_Click" >+</Button>
             <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
                 <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">TODO</TextBlock>
@@ -36,6 +36,8 @@
                 </Button>
             </DockPanel>
         </Grid>
+        
+        <!--listbox waar alle ToDo's in komen te staan-->
         <ListBox x:Name="ListboxToDo" Background="Transparent" BorderBrush="Transparent" Margin="0" Padding="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="590">
             <ListBox.ItemTemplate>
                 <DataTemplate>

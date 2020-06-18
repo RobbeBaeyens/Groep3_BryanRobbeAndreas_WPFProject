@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="ToDoBewerken" MinHeight="731" Height="731" MaxHeight="731" MinWidth="411" Width="411" MaxWidth="411" Loaded="Window_Loaded">
     <StackPanel >
-
+<!--Andreas steenackers-->
         <Grid Style="{StaticResource Header}">
-
+            <!--header zoals op elke pagina enkel naam aanpassingen voor de ToDo scherm-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -19,7 +19,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
             <Button Grid.Column="0" Grid.Row="0" x:Name="btnAddToDo"  Style="{StaticResource AddButtonHeader}" Height="62"></Button>
             <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
                 <TextBlock FontFamily="MS Mincho"  Style="{StaticResource HeaderText}">TODO</TextBlock>
@@ -38,16 +37,16 @@
             </DockPanel>
         </Grid>
 
-
+<!-- Dockpanel zodat de labels, textbox en togglebutton naast elkaar komen te staan-->
         <DockPanel>
             <Label x:Name="lblVolgnr" Content="#1" FontSize="25px" Margin="0,10,0,0"/>
             <Label Content="Titel:" FontSize="25px" Margin="0,10,0,0"/>
             <TextBox x:Name="txtToDoTitel" Style="{StaticResource ToDoTextBox}"/>
             <ToggleButton x:Name="tgbCheck" Style="{StaticResource ToDoButtonDone}" />
         </DockPanel>
-
+<!--textbox omschrijving-->
         <TextBox x:Name="txtbOmschrijving" Style="{StaticResource txtbToDoBewerk}"/>
-
+        <!--Save button voor ToDo-->
         <Button x:Name="btnSaveToDo" Content="Save" Margin="0,20,0,0" Style="{StaticResource SaveButton}" Click="btnSaveToDo_Click"/>
     </StackPanel>
 </Window>

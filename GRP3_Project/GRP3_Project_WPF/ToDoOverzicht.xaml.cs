@@ -16,20 +16,25 @@ using System.Windows.Shapes;
 
 namespace GRP3_Project_WPF
 {
+    // Andreas Steenackers
     /// <summary>
     /// Interaction logic for ToDoOverzicht.xaml
     /// </summary>
     public partial class ToDoOverzicht : Window
     {
+        //hier wordt er een nieuwe eventitem gemaakt en ToDo
         Event eventitem = new Event();
         ToDo todo = new ToDo();
         int eventID;
+
+        //Hier wordt de eventId opgevraagd zodat er niet dezelfde ToDo komt te staan bij een andere event
         public ToDoOverzicht(int eventID)
         {
             InitializeComponent();
             this.eventID = eventID;
         }
 
+        //laad alles op het wpf scherm
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             eventitem = DatabaseOperations.OphalenEvent(eventID);
@@ -38,6 +43,7 @@ namespace GRP3_Project_WPF
             updateList();
         }
 
+        // listbox updaten zodat er meerdere To Do's kunnen staan
         private void updateList()
         {
             List<ToDo> todoList = new List<ToDo>();
@@ -66,6 +72,7 @@ namespace GRP3_Project_WPF
             ListboxToDo.ItemsSource = moreToDoInfo;
         }
 
+        //Zorgt voor navigatie naar ToDoBewerken met de gegevens die er al stonden zodat je deze kan aanpassen
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
@@ -75,6 +82,7 @@ namespace GRP3_Project_WPF
             toDoBewerken.Show();
         }
 
+        //Deze knop verwijderd een ToDo
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
@@ -88,6 +96,7 @@ namespace GRP3_Project_WPF
             }
         }
 
+        //Met deze knop kan men een nieuwe ToDo toevoegen
         private void btnAddToDo_Click(object sender, RoutedEventArgs e)
         {
             Window todoBewerken = new ToDoBewerken(eventID);
@@ -95,6 +104,7 @@ namespace GRP3_Project_WPF
             todoBewerken.Show();
         }
 
+        //Dit is een navigatie knop naar de vorige pagina
         private void btnGoBack_Click(object sender, RoutedEventArgs e)
         {
             Window eventDetail = new EventDetail(eventID);
