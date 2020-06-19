@@ -112,6 +112,7 @@ namespace GRP3_Project_DAL
             using(EventBeheerEntities entities = new EventBeheerEntities())
             {
                 var query = entities.ToDo
+                    .Include(x => x.Event)
                     .Where(x => x.ToDoID == todoid);
                 return query.SingleOrDefault();
             }
