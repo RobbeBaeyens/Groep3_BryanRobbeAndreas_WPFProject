@@ -57,7 +57,7 @@ namespace GRP3_Project_DAL
                     return entities.SaveChanges();
                 }
             }
-            catch (Exception ngex)
+            catch (Exception ex)
             {
                 return 0;
             }
@@ -129,10 +129,17 @@ namespace GRP3_Project_DAL
         //updaten
         public static int UpdateToDo(ToDo todo)
         {
-            using (EventBeheerEntities entities = new EventBeheerEntities())
+            try
             {
-                entities.Entry(todo).State = EntityState.Modified;
-                return entities.SaveChanges();
+                using (EventBeheerEntities entities = new EventBeheerEntities())
+                {
+                    entities.Entry(todo).State = EntityState.Modified;
+                    return entities.SaveChanges();
+                }
+            }
+            catch(Exception ex)
+            {
+                return 0;
             }
         }
         //deleten
@@ -191,16 +198,6 @@ namespace GRP3_Project_DAL
             using (EventBeheerEntities entities = new EventBeheerEntities())
             {
                 entities.Locatie.Add(locatieAdd);
-                return entities.SaveChanges();
-            }
-        }
-
-        //Updaten
-        public static int UpdatenLocatie(Locatie locatieUpd)
-        {
-            using (EventBeheerEntities entities = new EventBeheerEntities())
-            {
-                entities.Entry(locatieUpd).State = EntityState.Modified;
                 return entities.SaveChanges();
             }
         }

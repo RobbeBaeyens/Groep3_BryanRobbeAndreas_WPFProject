@@ -104,10 +104,6 @@ namespace GRP3_Project_WPF
                 //Kijkt na of het een nieuw scherm is of een scherm dat je wil bewerken
                 if (toDoID != -1)
                 {
-                    
-                    todo.ToDoID = toDoID;
-                    todo.Event = eventItem;
-
                     //kijkt of de update uitgevoerd kan worden
                     int ok = DatabaseOperations.UpdateToDo(todo);
 
